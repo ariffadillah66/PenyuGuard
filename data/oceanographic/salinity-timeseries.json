@@ -1,0 +1,299 @@
+[
+  {
+    "year": 2022,
+    "month": 1,
+    "period": "2022-01",
+    "sal_mean_psu": 34.13,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_01"
+  },
+  {
+    "year": 2022,
+    "month": 2,
+    "period": "2022-02",
+    "sal_mean_psu": 33.783,
+    "image_count": 224,
+    "pixel_count": 620,
+    "id": "sal_2022_02"
+  },
+  {
+    "year": 2022,
+    "month": 3,
+    "period": "2022-03",
+    "sal_mean_psu": 33.483,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_03"
+  },
+  {
+    "year": 2022,
+    "month": 4,
+    "period": "2022-04",
+    "sal_mean_psu": 33.281,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2022_04"
+  },
+  {
+    "year": 2022,
+    "month": 5,
+    "period": "2022-05",
+    "sal_mean_psu": 32.932,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_05"
+  },
+  {
+    "year": 2022,
+    "month": 6,
+    "period": "2022-06",
+    "sal_mean_psu": 33.389,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2022_06"
+  },
+  {
+    "year": 2022,
+    "month": 7,
+    "period": "2022-07",
+    "sal_mean_psu": 33.925,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_07"
+  },
+  {
+    "year": 2022,
+    "month": 8,
+    "period": "2022-08",
+    "sal_mean_psu": 34.108,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_08"
+  },
+  {
+    "year": 2022,
+    "month": 9,
+    "period": "2022-09",
+    "sal_mean_psu": 34.127,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2022_09"
+  },
+  {
+    "year": 2022,
+    "month": 10,
+    "period": "2022-10",
+    "sal_mean_psu": 34.096,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_10"
+  },
+  {
+    "year": 2022,
+    "month": 11,
+    "period": "2022-11",
+    "sal_mean_psu": 34.162,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2022_11"
+  },
+  {
+    "year": 2022,
+    "month": 12,
+    "period": "2022-12",
+    "sal_mean_psu": 34.22,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2022_12"
+  },
+  {
+    "year": 2023,
+    "month": 1,
+    "period": "2023-01",
+    "sal_mean_psu": 34.131,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_01"
+  },
+  {
+    "year": 2023,
+    "month": 2,
+    "period": "2023-02",
+    "sal_mean_psu": 34.187,
+    "image_count": 224,
+    "pixel_count": 620,
+    "id": "sal_2023_02"
+  },
+  {
+    "year": 2023,
+    "month": 3,
+    "period": "2023-03",
+    "sal_mean_psu": 33.644,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_03"
+  },
+  {
+    "year": 2023,
+    "month": 4,
+    "period": "2023-04",
+    "sal_mean_psu": 33.15,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2023_04"
+  },
+  {
+    "year": 2023,
+    "month": 5,
+    "period": "2023-05",
+    "sal_mean_psu": 32.781,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_05"
+  },
+  {
+    "year": 2023,
+    "month": 6,
+    "period": "2023-06",
+    "sal_mean_psu": 33.124,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2023_06"
+  },
+  {
+    "year": 2023,
+    "month": 7,
+    "period": "2023-07",
+    "sal_mean_psu": 33.889,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_07"
+  },
+  {
+    "year": 2023,
+    "month": 8,
+    "period": "2023-08",
+    "sal_mean_psu": 34.124,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_08"
+  },
+  {
+    "year": 2023,
+    "month": 9,
+    "period": "2023-09",
+    "sal_mean_psu": 34.193,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2023_09"
+  },
+  {
+    "year": 2023,
+    "month": 10,
+    "period": "2023-10",
+    "sal_mean_psu": 34.213,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_10"
+  },
+  {
+    "year": 2023,
+    "month": 11,
+    "period": "2023-11",
+    "sal_mean_psu": 34.145,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2023_11"
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "period": "2023-12",
+    "sal_mean_psu": 34.144,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2023_12"
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "period": "2024-01",
+    "sal_mean_psu": 34.172,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2024_01"
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "period": "2024-02",
+    "sal_mean_psu": 34.102,
+    "image_count": 232,
+    "pixel_count": 620,
+    "id": "sal_2024_02"
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "period": "2024-03",
+    "sal_mean_psu": 33.838,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2024_03"
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "period": "2024-04",
+    "sal_mean_psu": 32.942,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2024_04"
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "period": "2024-05",
+    "sal_mean_psu": 32.815,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2024_05"
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "period": "2024-06",
+    "sal_mean_psu": 33.149,
+    "image_count": 240,
+    "pixel_count": 620,
+    "id": "sal_2024_06"
+  },
+  {
+    "year": 2024,
+    "month": 7,
+    "period": "2024-07",
+    "sal_mean_psu": 33.873,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2024_07"
+  },
+  {
+    "year": 2024,
+    "month": 8,
+    "period": "2024-08",
+    "sal_mean_psu": 34.141,
+    "image_count": 248,
+    "pixel_count": 620,
+    "id": "sal_2024_08"
+  },
+  {
+    "year": 2024,
+    "month": 9,
+    "period": "2024-09",
+    "sal_mean_psu": 34.173,
+    "image_count": 36,
+    "pixel_count": 620,
+    "id": "sal_2024_09"
+  }
+]

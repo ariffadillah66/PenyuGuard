@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk Admin — PenyuGuard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body class="adm-body">
+<div class="adm-login">
+
+  <!-- Panel kiri: brand & deskripsi -->
+  <aside class="adm-login-hero">
+    <div class="adm-login-hero-inner">
+      <div class="adm-login-logo">
+        <img src="../assets/logo/penyuguard-brand.png" alt="Logo PenyuGuard">
+        <div>
+          <div class="adm-login-logo-name"><img class="pg-wordmark" src="../assets/logo/penyuguard-wordmark.png" alt="PenyuGuard"></div>
+          <div class="adm-login-logo-sub">Konsol Admin</div>
+        </div>
+      </div>
+      <h1>Konsol Administrasi <em>PenyuGuard</em></h1>
+      <p>Kelola verifikasi laporan masyarakat, data penyu, persebaran spasial, hingga konten edukasi konservasi penyu Pulau Rinca — semuanya dari satu tempat.</p>
+      <ul class="adm-login-feats">
+        <li><i class="fa-solid fa-clipboard-check"></i><span>Verifikasi &amp; publikasi laporan masyarakat</span></li>
+        <li><i class="fa-solid fa-turtle"></i><span>Manajemen data penyu</span></li>
+        <li><i class="fa-solid fa-map-location-dot"></i><span>Peta &amp; data persebaran spasial</span></li>
+        <li><i class="fa-solid fa-shield-halved"></i><span>Kontrol akses peran operator &amp; administrator</span></li>
+      </ul>
+      <span class="badge badge-warn badge-lg"><i class="fa-solid fa-user-shield"></i> Area Terbatas — Operator &amp; Administrator</span>
+    </div>
+  </aside>
+
+  <!-- Panel kanan: formulir login -->
+  <section class="adm-login-panel">
+    <div class="adm-login-card">
+      <div class="card">
+        <div class="card-pad">
+          <h2 style="font-size:21px;margin-bottom:6px">Masuk ke Admin</h2>
+          <p class="text-muted text-sm mb-20">Gunakan akun operator atau administrator Anda.</p>
+
+          <div class="alert alert-danger mb-16" id="login-error" style="display:none">
+            <i class="fa-solid fa-circle-exclamation"></i><span id="login-error-msg"></span>
+          </div>
+          <div class="alert alert-warn mb-16" id="login-user-notice" style="display:none">
+            <i class="fa-solid fa-circle-info"></i><span>Akun Anda tidak memiliki akses admin.</span>
+          </div>
+
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="login-email">Email <span class="req">*</span></label>
+              <div class="input-icon">
+                <i class="fa-solid fa-envelope"></i>
+                <input class="input" type="email" id="login-email" placeholder="nama@penyuguard.id" autocomplete="username" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="login-password">Kata Sandi <span class="req">*</span></label>
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+                <input class="input" type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" required>
+                <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Tampilkan kata sandi"><i class="fa-solid fa-eye"></i></button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block" id="login-submit" type="submit">
+              <i class="fa-solid fa-right-to-bracket"></i> Masuk ke Konsol Admin
+            </button>
+          </form>
+
+          <div id="user-notice-actions" style="display:none;margin-top:16px">
+            <a class="btn btn-outline btn-block" href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Situs Publik</a>
+          </div>
+
+          <div class="adm-demo-accounts">
+            <h5><i class="fa-solid fa-flask"></i> Akun Uji Demonstrasi — klik untuk mengisi</h5>
+            <button type="button" class="adm-demo-account" data-email="operator@penyuguard.id">
+              <span><strong>operator@penyuguard.id</strong><small>Kata sandi: demo1234</small></span>
+              <span class="badge badge-info">Operator</span>
+            </button>
+            <button type="button" class="adm-demo-account" data-email="admin@penyuguard.id">
+              <span><strong>admin@penyuguard.id</strong><small>Kata sandi: demo1234</small></span>
+              <span class="badge badge-teal">Administrator</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="adm-login-foot">© 2026 PenyuGuard • Mode Demonstrasi</p>
+    </div>
+  </section>
+</div>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+(function () {
+  'use strict';
+  function $(s) { return document.querySelector(s); }
+
+  /* Toast minimal (gaya pg-toast pada style.css) */
+  function toast(msg, type) {
+    var icons = { success: 'fa-circle-check', error: 'fa-circle-xmark', info: 'fa-circle-info', warn: 'fa-triangle-exclamation' };
+    var wrap = document.querySelector('.pg-toast-wrap');
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.className = 'pg-toast-wrap';
+      document.body.appendChild(wrap);
+    }
+    var t = document.createElement('div');
+    t.className = 'pg-toast pg-toast-' + (type || 'info');
+    t.innerHTML = '<i class="fa-solid ' + (icons[type] || 'fa-circle-info') + '"></i><div>' + msg + '</div>';
+    wrap.appendChild(t);
+    setTimeout(function () { t.classList.add('out'); setTimeout(function () { t.remove(); }, 300); }, 4200);
+  }
+
+  function showError(msg) {
+    $('#login-error-msg').textContent = msg;
+    $('#login-error').style.display = 'flex';
+  }
+  function hideError() { $('#login-error').style.display = 'none'; }
+
+  function nextParam() {
+    var next = new URLSearchParams(window.location.search).get('next');
+    return next ? decodeURIComponent(next) : 'dashboard.html';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    /* Akun uji demonstrasi tidak ditampilkan bila Supabase sudah dikonfigurasi. */
+    if (window.PGConfig && PGConfig.isConfigured) {
+      var demoBox = document.querySelector('.adm-demo-accounts');
+      if (demoBox) demoBox.style.display = 'none';
+      var loginFoot = document.querySelector('.adm-login-foot');
+      if (loginFoot) loginFoot.textContent = '© 2026 PenyuGuard';
+    }
+
+    /* Cek sesi yang sudah ada */
+    (async function () {
+      try { await PGAuth.ready; } catch (e) { /* abaikan */ }
+      var u = PGAuth.user;
+      if (u && PGAuth.isStaff()) { window.location.replace(nextParam()); return; }
+      if (u && u.role === 'user') {
+        toast('Akun Anda tidak memiliki akses admin.', 'warn');
+        $('#login-user-notice').style.display = 'flex';
+        $('#user-notice-actions').style.display = 'block';
+      }
+    })();
+
+    /* Tampilkan / sembunyikan password */
+    $('#pw-toggle').addEventListener('click', function () {
+      var inp = $('#login-password');
+      var show = inp.type === 'password';
+      inp.type = show ? 'text' : 'password';
+      this.innerHTML = '<i class="fa-solid ' + (show ? 'fa-eye-slash' : 'fa-eye') + '"></i>';
+      this.setAttribute('aria-label', show ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi');
+    });
+
+    /* Isi cepat akun demo */
+    document.querySelectorAll('.adm-demo-account').forEach(function (b) {
+      b.addEventListener('click', function () {
+        $('#login-email').value = b.getAttribute('data-email');
+        $('#login-password').value = 'demo1234';
+        hideError();
+        toast('Kredensial demo diisi — klik Masuk untuk melanjutkan.', 'info');
+      });
+    });
+
+    /* Submit login */
+    $('#login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      hideError();
+      var email = $('#login-email').value.trim();
+      var pw = $('#login-password').value;
+      if (!email || !pw) { showError('Email dan kata sandi wajib diisi.'); return; }
+
+      var btn = $('#login-submit');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Memproses…';
+      try {
+        var user = await PGAuth.login(email, pw, true);
+        if (user.role === 'operator' || user.role === 'admin') {
+          window.location.replace(nextParam());
+          return;
+        }
+        showError('Akun tidak memiliki akses ke area admin.');
+        await PGAuth.logout();
+      } catch (err) {
+        showError(err && err.message ? err.message : 'Login gagal. Silakan coba lagi.');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Masuk ke Konsol Admin';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

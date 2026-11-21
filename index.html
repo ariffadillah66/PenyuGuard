@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PenyuGuard — Pemantauan Penyu dan Perairan Pulau Rinca</title>
+  <meta name="description" content="PenyuGuard: platform pemantauan dan analitik konservasi penyu — persebaran, oseanografi, edukasi, dan pelaporan interaksi manusia–penyu di Pulau Rinca, Taman Nasional Komodo, NTT.">
+  <link rel="icon" type="image/png" href="assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/ocean-theme.css">
+</head>
+<body data-active="beranda">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+      <source src="assets/images/hero-underwater.mp4" type="video/mp4">
+    </video>
+    <div class="pg-container">
+      <span class="hero-kicker reveal"><i class="fa-solid fa-location-dot"></i> Pulau Rinca • Taman Nasional Komodo • NTT</span>
+      <h1 class="reveal hero-title-editorial">PENYU<span>GUARD</span></h1>
+      <p class="tagline reveal">Sistem pemantauan perjumpaan penyu, kondisi perairan, dan pemetaan interaksi pesisir di Pulau Rinca, Taman Nasional Komodo.</p>
+      <p class="hero-desc reveal">
+        PenyuGuard mengintegrasikan Artificial Intelligence, Geographic Information System, dan analisis oseanografi untuk mendukung pemantauan dan konservasi penyu di Pulau Rinca.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="pages/dashboard.html" class="btn btn-light btn-lg"><i class="fa-solid fa-compass"></i> Jelajahi Dashboard</a>
+        <a href="pages/report.html" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-life-ring"></i> Laporkan Penyu</a>
+      </div>
+      <div class="hero-stats reveal" id="hero-stats">
+        <div class="hero-stat"><div class="hs-value" id="hs-sightings">–</div><div class="hs-label">Rekaman perjumpaan penyu</div></div>
+        <div class="hero-stat"><div class="hs-value" id="hs-locations">–</div><div class="hs-label">Lokasi pengamatan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OCEAN ANALYTICS ============ -->
+  <section class="section analytics-band" id="analytics">
+    <div class="pg-container">
+      <div class="section-head section-head-left reveal">
+        <span class="kicker">Ringkasan Pemantauan</span>
+        <h2>Dinamika Perairan Pulau Rinca</h2>
+        <span class="analytics-status" id="analytics-status">Memeriksa sumber data…</span>
+        <p>Pantau catatan perjumpaan, lokasi pengamatan, spesies, dan kondisi perairan. Cakupan setiap ringkasan mengikuti data yang tersedia di platform.</p>
+      </div>
+      <div class="analytics-grid">
+        <a class="analytics-tile reveal" href="pages/dashboard.html"><span class="analytics-label">TOTAL PERJUMPAAN TERVERIFIKASI</span><strong id="hs-sightings-analytics">—</strong><span>Observasi tercatat <i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+        <a class="analytics-tile reveal" href="pages/mapping.html"><span class="analytics-label">LOKASI PENGAMATAN</span><strong id="hs-locations-analytics">—</strong><span>Lihat persebaran di peta <i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+        <a class="analytics-tile analytics-wide reveal" href="pages/oceanographic.html"><span class="analytics-label">KONDISI PERAIRAN</span><strong>SST <i>·</i> CHL-a <i>·</i> Salinitas</strong><span>Tren oseanografi berdasarkan cakupan data tiap parameter <i class="fa-solid fa-arrow-up-right-from-square"></i></span><div class="ocean-signal" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TENTANG ============ -->
+  <section class="section" id="tentang">
+    <div class="pg-container">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="section-head-left">
+            <span class="kicker">Tentang PenyuGuard</span>
+            <h2>Apa yang Ada di PenyuGuard?</h2>
+            <p class="text-muted">PenyuGuard menyatukan data perjumpaan penyu, peta lokasi budidaya, parameter oseanografi,
+            materi konservasi, dan kanal pelaporan dalam satu platform untuk membantu publik memahami kondisi perairan
+            Pulau Rinca dan Taman Nasional Komodo.</p>
+          </div>
+          <ul class="about-points">
+            <li><i class="fa-solid fa-map-location-dot"></i><span><strong>Pemantauan persebaran penyu</strong> penting karena data perjumpaan yang terdokumentasi menjadi indeks kehadiran penyu di perairan yang sama dengan aktivitas masyarakat pesisir.</span></li>
+            <li><i class="fa-solid fa-scale-balanced"></i><span><strong>Interaksi penyu dan manusia</strong> — seperti tangkapan sampingan (bycatch) dan tumpang-tindih dengan budidaya rumput laut — memerlukan pendekatan mitigasi yang berbasis data, bukan asumsi.</span></li>
+            <li><i class="fa-solid fa-water"></i><span><strong>Analisis oseanografi</strong> menyajikan SST, klorofil-a, dan salinitas berdasarkan periode dengan sumber data tersedia.</span></li>
+            <li><i class="fa-solid fa-book-open"></i><span><strong>Edukasi dan konservasi</strong> memuat katalog Penyu Hijau dan Penyu Sisik, informasi habitat, ancaman, dan panduan pelaporan.</span></li>
+          </ul>
+        </div>
+        <div class="about-visual reveal">
+          <img src="assets/images/rinca-island.jpg" alt="Lanskap Pulau Rinca, Taman Nasional Komodo">
+          <div class="about-float">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <strong>Konservasi Berbasis Data</strong>
+              <small>Perjumpaan penyu bersifat indeks observasi, bukan hitungan populasi absolut.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KATALOG SPESIES ============ -->
+  <section class="section" id="spesies">
+    <div class="pg-container">
+      <div class="section-head reveal">
+        <span class="kicker">Katalog Spesies</span>
+        <h2>Penyu Hijau &amp; Penyu Sisik</h2>
+        <p>Katalog publik berfokus pada dua spesies yang terdokumentasi di perairan Taman Nasional Komodo:
+        <strong>Penyu Hijau (<em>Chelonia mydas</em>)</strong> dan <strong>Penyu Sisik (<em>Eretmochelys imbricata</em>)</strong>.</p>
+      </div>
+      <div class="pg-grid" id="species-grid">
+        <!-- Kartu spesies dirender oleh js/home.js -->
+      </div>
+      <div class="note-strip mt-20 reveal">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Catatan perjumpaan mencantumkan sumber dan kualitas data; observasi komunitas dan data demo tetap dibedakan.
+        Klik kartu untuk melihat karakteristik lengkap setiap spesies. <span id="home-species-source" hidden></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FITUR UNGGULAN ============ -->
+  <section class="section section-alt">
+    <div class="pg-container">
+      <div class="section-head reveal">
+        <span class="kicker">Fitur yang Tersedia</span>
+        <h2>Satu Platform untuk Pemantauan Pesisir</h2>
+        <p>Gunakan data perjumpaan dan kondisi perairan untuk mendukung pemantauan penyu di Pulau Rinca.</p>
+      </div>
+      <div class="pg-grid">
+        <a href="pages/dashboard.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3>Dashboard Analitik</h3>
+          <p>Ringkasan data perjumpaan, sumber data, lokasi budidaya, dan parameter oseanografi yang tersedia.</p>
+          <span class="feat-link">Buka Dashboard <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="pages/mapping.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-map"></i></div>
+          <h3>Peta Persebaran</h3>
+          <p>Peta perjumpaan penyu, lokasi budidaya, dan area kajian awal budidaya dengan catatan batas rekomendasinya.</p>
+          <span class="feat-link">Buka Peta <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="pages/oceanographic.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-temperature-half"></i></div>
+          <h3>Oseanografi</h3>
+          <p>Telusuri SST, klorofil-a, dan salinitas pada periode yang tercakup dalam tiap dataset.</p>
+          <span class="feat-link">Lihat Analisis <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="pages/ai-analysis.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-microscope"></i></div>
+          <h3>Analisis AI</h3>
+          <p>Unggah foto penyu untuk identifikasi spesies otomatis (YOLOv8) serta estimasi panjang karapas dan usia saat dilengkapi ArUco Marker.</p>
+          <span class="feat-link">Buka Analisis AI <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="pages/education.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Edukasi &amp; Konservasi</h3>
+          <p>Katalog Penyu Hijau dan Penyu Sisik, informasi habitat, ancaman, dan panduan konservasi.</p>
+          <span class="feat-link">Buka Edukasi <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="pages/report.html" class="card card-hover feature-card reveal">
+          <div class="feat-icon"><i class="fa-solid fa-paper-plane"></i></div>
+          <h3>Laporkan Perjumpaan</h3>
+          <p>Kirim informasi perjumpaan penyu agar dapat diperiksa dan diverifikasi petugas.</p>
+          <span class="feat-link">Buat Laporan <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </div>
+      <div class="feature-more reveal"><span><i class="fa-solid fa-wand-magic-sparkles"></i> Identifikasi Spesies Berbasis AI</span><span><i class="fa-solid fa-ruler"></i> Estimasi Panjang Karapas</span><span><i class="fa-solid fa-chart-line"></i> Analisis Pertumbuhan Penyu</span><span><i class="fa-solid fa-map-location-dot"></i> Pemetaan Sebaran Penyu</span><span><i class="fa-solid fa-water"></i> Pemantauan Oseanografi</span><span><i class="fa-solid fa-chart-pie"></i> Dinamika Perjumpaan</span><span><i class="fa-solid fa-life-ring"></i> Pelaporan Tangkapan Sampingan</span><span><i class="fa-solid fa-book-open"></i> Edukasi Konservasi</span></div>
+    </div>
+  </section>
+
+  <section class="conservation-section" id="konservasi">
+    <div class="conservation-image reveal"><img src="assets/images/seagrass.jpg" alt="Padang lamun sebagai habitat mencari makan penyu" loading="lazy"><div class="conservation-image-note"><i class="fa-solid fa-location-dot"></i> Pulau Rinca · Taman Nasional Komodo</div></div>
+    <div class="conservation-copy reveal"><span class="kicker">Habitat · Spesies · Koeksistensi</span><h2>Kenali Perairannya,<br><em>Jaga Biota di Dalamnya</em></h2><p>Perairan Rinca menjadi habitat penyu sekaligus ruang hidup masyarakat pesisir. Catatan perjumpaan dan kondisi habitat dapat membantu mengarahkan pemantauan serta upaya mengurangi ancaman, termasuk tangkapan sampingan.</p><div class="conservation-tags"><span>Penyu Hijau</span><span>Penyu Sisik</span><span>Lamun &amp; terumbu karang</span><span>Ancaman &amp; mitigasi tangkapan sampingan</span></div><a class="btn btn-outline-light" href="pages/education.html">Pelajari konservasi <i class="fa-solid fa-arrow-right"></i></a></div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="pg-container reveal">
+      <h2>Setiap Catatan Perjumpaan<br>Berarti bagi Konservasi</h2>
+      <p>Setiap pengamatan, laporan, dan keputusan berbasis data ikut menjaga masa depan penyu di perairan Pulau Rinca.</p>
+      <div class="hero-actions">
+        <a href="pages/dashboard.html" class="btn btn-light btn-lg"><i class="fa-solid fa-chart-pie"></i> Lihat Dashboard</a>
+        <a href="pages/education.html" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-book-open"></i> Halaman Edukasi</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="config/runtime-config.js"></script>
+<script src="config/supabase.js"></script>
+<script src="js/data-fallback.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

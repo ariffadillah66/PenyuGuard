@@ -1,0 +1,153 @@
+/* ============================================================
+   PenyuGuard — home.css (halaman beranda)
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 92vh; display: flex; align-items: center;
+  background: url('../assets/images/hero-turtle.jpg') center 38% / cover no-repeat;
+  color: #fff; overflow: hidden;
+}
+.hero::before { content: ''; position: absolute; inset: 0; background: var(--pg-grad-hero); }
+.hero .pg-container { position: relative; z-index: 1; padding-top: 40px; padding-bottom: 40px; }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600;
+  letter-spacing: .4px; color: var(--pg-aqua); background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 8px 17px;
+  backdrop-filter: blur(6px);
+}
+.hero h1 {
+  color: #fff; font-size: clamp(46px, 7.5vw, 78px); font-weight: 800;
+  letter-spacing: -1.5px; margin: 22px 0 6px; line-height: 1.02;
+}
+.hero h1 em { font-style: normal; color: var(--pg-teal); }
+.hero .tagline {
+  font-family: var(--pg-font-head); font-size: clamp(17px, 2.3vw, 22px); font-weight: 600;
+  color: rgba(255,255,255,.92); font-style: italic; margin-bottom: 18px;
+}
+.hero .tagline::before, .hero .tagline::after { content: '—'; opacity: .5; margin: 0 10px; font-style: normal; }
+.hero-desc { max-width: 660px; color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.75; }
+.hero-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 52px;
+  max-width: 860px;
+}
+.hero-stat {
+  background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px; padding: 18px 20px; backdrop-filter: blur(8px);
+}
+.hero-stat .hs-value { font-family: var(--pg-font-head); font-size: 27px; font-weight: 800; color: #fff; }
+.hero-stat .hs-label { font-size: 12.3px; color: rgba(255,255,255,.72); font-weight: 500; line-height: 1.4; }
+.hero-scroll {
+  position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2;
+  color: rgba(255,255,255,.75); font-size: 20px; animation: bob 2.2s infinite;
+}
+@keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 9px); } }
+
+@media (max-width: 900px) {
+  .hero { min-height: 88vh; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .hero-stats { gap: 11px; }
+  .hero-stat { padding: 14px; }
+  .hero-stat .hs-value { font-size: 22px; }
+  .hero .tagline::before, .hero .tagline::after { display: none; }
+}
+
+/* ---------- Tentang ---------- */
+.about-visual { position: relative; }
+.about-visual > img { border-radius: var(--pg-radius-lg); box-shadow: var(--pg-shadow-lg); width: 100%; height: 480px; object-fit: cover; }
+.about-float {
+  position: absolute; left: -26px; bottom: 30px; background: #fff; border-radius: 16px;
+  box-shadow: var(--pg-shadow-lg); padding: 17px 20px; display: flex; gap: 13px; align-items: center;
+  max-width: 300px;
+}
+.about-float i { width: 46px; height: 46px; flex-shrink: 0; border-radius: 13px; background: var(--pg-success-soft); color: var(--pg-teal-deep); display: flex; align-items: center; justify-content: center; font-size: 19px; }
+.about-float strong { display: block; font-size: 14px; color: var(--pg-navy); }
+.about-float small { font-size: 12.2px; color: var(--pg-muted); line-height: 1.45; display: block; }
+@media (max-width: 640px) {
+  .about-visual > img { height: 330px; }
+  .about-float { left: 12px; right: 12px; bottom: 14px; }
+}
+.about-points { list-style: none; margin-top: 20px; }
+.about-points li { display: flex; gap: 13px; padding: 11px 0; border-bottom: 1px dashed var(--pg-border); font-size: 14.3px; color: var(--pg-text); line-height: 1.6; }
+.about-points li:last-child { border-bottom: none; }
+.about-points i { color: var(--pg-teal); margin-top: 3.5px; flex-shrink: 0; }
+.about-points strong { color: var(--pg-navy); }
+
+/* ---------- Kartu tujuan ---------- */
+.goal-card { position: relative; overflow: hidden; }
+.goal-card .goal-num {
+  position: absolute; right: 16px; top: 10px; font-family: var(--pg-font-head);
+  font-size: 64px; font-weight: 800; color: var(--pg-aqua); opacity: .55; line-height: 1;
+}
+.goal-icon {
+  width: 58px; height: 58px; border-radius: 17px; margin-bottom: 18px;
+  display: flex; align-items: center; justify-content: center; font-size: 23px;
+  background: var(--pg-info-soft); color: var(--pg-ocean);
+}
+.goal-card:nth-child(2) .goal-icon { background: var(--pg-success-soft); color: var(--pg-teal-deep); }
+.goal-card:nth-child(3) .goal-icon { background: #E4E9EC; color: var(--pg-navy); }
+.goal-card:nth-child(4) .goal-icon { background: var(--pg-warn-soft); color: var(--pg-warn); }
+.goal-card h3 { font-size: 17.5px; margin-bottom: 10px; }
+.goal-card p { font-size: 13.9px; color: var(--pg-muted); line-height: 1.7; }
+
+/* ---------- Katalog spesies ---------- */
+.species-card { overflow: hidden; display: flex; flex-direction: column; cursor: pointer; }
+.species-card .sp-photo { position: relative; height: 215px; overflow: hidden; }
+.species-card .sp-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.species-card:hover .sp-photo img { transform: scale(1.07); }
+.species-card .sp-status {
+  position: absolute; top: 13px; left: 13px; right: 13px; display: flex; gap: 7px; flex-wrap: wrap;
+}
+.species-card .sp-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.species-card h3 { font-size: 18px; }
+.species-card .sp-sci { font-style: italic; color: var(--pg-ocean); font-size: 13.5px; font-weight: 600; }
+.species-card .sp-desc { font-size: 13.4px; color: var(--pg-muted); line-height: 1.68; flex: 1; }
+.species-card .sp-meta { display: flex; flex-direction: column; gap: 5px; font-size: 12.6px; color: var(--pg-text); border-top: 1px dashed var(--pg-border); padding-top: 12px; }
+.species-card .sp-meta b { color: var(--pg-navy); font-weight: 600; }
+.species-card .sp-link { font-size: 13px; font-weight: 700; color: var(--pg-teal-deep); display: inline-flex; align-items: center; gap: 7px; margin-top: 4px; }
+
+/* ---------- Fitur unggulan ---------- */
+.feature-card { display: flex; flex-direction: column; gap: 13px; padding: 26px 24px; }
+.feature-card .feat-icon {
+  width: 52px; height: 52px; border-radius: 15px; font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--pg-aqua-soft); color: var(--pg-ocean);
+}
+.feature-card:nth-child(even) .feat-icon { background: var(--pg-info-soft); color: var(--pg-teal-deep); }
+.feature-card h3 { font-size: 16.5px; }
+.feature-card p { font-size: 13.4px; color: var(--pg-muted); line-height: 1.65; flex: 1; }
+.feature-card .feat-link { font-size: 13.2px; font-weight: 700; color: var(--pg-ocean); display: inline-flex; align-items: center; gap: 7px; }
+.feature-card:hover .feat-link { color: var(--pg-teal-deep); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  position: relative; background: url('../assets/images/komodo-water.jpg') center / cover no-repeat fixed;
+  color: #fff; overflow: hidden;
+}
+.cta-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(8,8,92,.94), rgba(0,0,255,.72)); }
+.cta-band .pg-container { position: relative; z-index: 1; text-align: center; padding-top: 84px; padding-bottom: 84px; }
+.cta-band h2 { color: #fff; font-size: clamp(24px, 3.6vw, 34px); max-width: 700px; margin: 0 auto 14px; }
+.cta-band p { color: rgba(255,255,255,.82); max-width: 560px; margin: 0 auto 30px; }
+.cta-band .hero-actions { justify-content: center; margin-top: 0; }
+
+/* Alur kerja mini */
+.flow-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+.flow-item { text-align: center; padding: 22px 14px; }
+.flow-item .flow-num {
+  width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 50%;
+  background: var(--pg-navy); color: #fff; font-weight: 800; font-family: var(--pg-font-head);
+  display: flex; align-items: center; justify-content: center; font-size: 15px;
+}
+.flow-item h4 { font-size: 14.5px; margin-bottom: 5px; }
+.flow-item p { font-size: 12.4px; color: var(--pg-muted); line-height: 1.55; }
+
+/* Detail modal spesies */
+.sp-modal-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; }
+@media (max-width: 640px) { .sp-modal-grid { grid-template-columns: 1fr; } }
+.sp-modal-grid img { border-radius: 14px; width: 100%; height: 230px; object-fit: cover; }
+.sp-modal-grid h4 { font-size: 15px; margin: 14px 0 6px; }
+.sp-modal-grid p, .sp-modal-grid li { font-size: 13.6px; line-height: 1.7; color: var(--pg-text); }
+.sp-modal-grid ul { padding-left: 18px; }

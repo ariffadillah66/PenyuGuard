@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis Oseanografi — PenyuGuard</title>
+  <meta name="description" content="Analisis SST, klorofil-a (CHL), dan salinitas untuk kawasan Rinca.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/mapping.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="oseanografi">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span class="badge"><i class="fa-solid fa-temperature-half"></i> Analitik Oseanografi</span>
+      <h1>Analisis Oseanografi</h1>
+      <p>Pantau suhu permukaan laut (SST), klorofil-a (CHL-a), dan salinitas sebagai gambaran kondisi perairan.
+      Setiap parameter hanya ditampilkan untuk periode dan wilayah yang memiliki sumber data.</p>
+      <div class="mt-16" style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="chip" href="#sst-map-shell">SST</a><a class="chip" href="#parameter-ocean">CHL &amp; Salinitas</a><a class="chip" href="#habitat-suitability">Kesesuaian Habitat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTEN ============ -->
+  <section class="section" style="padding-top:44px">
+    <div class="pg-container">
+
+      <!-- Filter -->
+      <div class="filter-bar" style="margin-bottom:26px">
+        <div class="f-group">
+          <label for="f-year">Tahun</label>
+          <select id="f-year" class="select"></select>
+        </div>
+        <div class="f-group">
+          <label for="f-month">Bulan</label>
+          <select id="f-month" class="select"></select>
+        </div>
+        <div class="f-group">
+          <label for="f-tmin">Suhu Minimum (°C)</label>
+          <input type="number" step="0.1" id="f-tmin" class="input" placeholder="26">
+        </div>
+        <div class="f-group">
+          <label for="f-tmax">Suhu Maksimum (°C)</label>
+          <input type="number" step="0.1" id="f-tmax" class="input" placeholder="31">
+        </div>
+        <div class="f-group" style="justify-content:flex-end">
+          <label>&nbsp;</label>
+          <button type="button" class="btn btn-ghost btn-sm" id="sst-reset"><i class="fa-solid fa-rotate-left"></i> Atur Ulang</button>
+        </div>
+      </div>
+
+      <!-- 4 kartu statistik -->
+      <div class="stat-grid" id="sst-cards" style="margin-bottom:26px"></div>
+
+      <!-- Grafik SST bulanan + scatter -->
+      <div class="chart-duo-eq">
+        <div class="chart-card">
+          <h3>SST Bulanan</h3>
+          <p class="chart-sub">SST minimum, rata-rata, dan maksimum (°C) pada rentang filter terpilih — data bulanan yang diimpor.</p>
+          <div class="chart-box" style="--h:300px"><canvas id="ch-sst-monthly"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Perbandingan SST dengan Jumlah Perjumpaan Penyu</h3>
+          <p class="chart-sub" style="margin-bottom:10px">Setiap titik = satu bulan (gabungan seluruh tahun): SST rata-rata bulanan vs jumlah perjumpaan pada bulan yang sama.</p>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+            <span class="corr-badge" id="sst-corr"><i class="fa-solid fa-braille"></i> Korelasi Pearson r = –</span>
+            <span class="badge badge-muted"><i class="fa-solid fa-circle-info"></i> Korelasi ≠ hubungan sebab-akibat</span>
+          </div>
+          <div class="chart-box" style="--h:262px"><canvas id="ch-sst-scatter"></canvas></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PETA SST ============ -->
+  <section class="section section-alt">
+    <div class="pg-container">
+      <div class="section-head-left">
+        <span class="kicker">Peta Tematik</span>
+        <h2>Peta Suhu Permukaan Laut (NASA JPL MUR SST v4.1)</h2>
+        <p>Sebaran SST pada bulan terpilih ditampilkan dari 559 sel grid spasial pada dataset NASA JPL MUR SST v4.1. Skala warna tetap 26–31 °C agar perbandingan antarbulan konsisten.</p>
+      </div>
+
+      <div class="map-shell" id="sst-map-shell">
+        <div id="sst-map" class="pg-map" style="--map-h:420px"></div>
+        <div class="map-legend" id="sst-legend">
+          <h5>SST MUR (°C)</h5>
+          <div class="lg-scale" style="background:linear-gradient(90deg,#2455D6,#20B8D5,#35B86B,#F2D43D,#F28C28,#D92727)"></div>
+          <div class="lg-row" style="justify-content:space-between">
+            <span id="lg-min">–</span><span id="lg-max">–</span>
+          </div>
+          <div class="lg-row"><i class="fa-solid fa-circle-info"></i><span>Data grid spasial MUR</span></div>
+        </div>
+        <p id="sst-grid-count" class="text-xs text-muted" style="padding:6px 12px">Memuat 559 sel grid…</p>
+        <p id="sst-map-error" class="text-xs" role="status" style="padding:0 12px 8px"></p>
+      </div>
+
+      <div class="note-strip warn" style="margin-top:16px">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>Peta menggunakan nilai SST bulanan per sel grid dari produk analisis NASA JPL MUR v4.1. Produk MUR bersifat gap-filled; sebagian nilai pada area tanpa observasi langsung merupakan hasil interpolasi analisis.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PARAMETER OSEANOGRAFI LAIN ============ -->
+  <section class="section section-alt" id="parameter-ocean">
+    <div class="pg-container">
+      <div class="section-head-left">
+        <span class="kicker">Parameter Oseanografi</span>
+        <h2>Klorofil-a dan Salinitas</h2>
+        <p>Data bulanan dan grid spasial untuk periode yang tersedia. Pilih tahun dan bulan untuk menyaring grafik parameter oseanografi.</p>
+      </div>
+      <div class="filter-bar ocean-parameter-filter" aria-label="Filter periode grafik parameter oseanografi">
+        <div class="ocean-filter-intro"><strong>Periode grafik</strong><span>Atur rentang waktu klorofil-a dan salinitas</span></div>
+        <div class="f-group"><label for="parameter-year">Tahun</label><select id="parameter-year" class="select"></select></div>
+        <div class="f-group"><label for="parameter-month">Bulan</label><select id="parameter-month" class="select"></select></div>
+        <button type="button" class="btn btn-ghost btn-sm" id="parameter-period-reset"><i class="fa-solid fa-rotate-left"></i> Atur Ulang Periode</button>
+      </div>
+      <div class="chart-duo-eq">
+        <div class="chart-card">
+          <h3>Klorofil-a Bulanan</h3>
+          <p class="chart-sub">Rata-rata konsentrasi klorofil-a (mg/m³).</p>
+          <div class="stat-grid" id="chl-cards"></div>
+          <div class="chart-box" style="--h:260px"><canvas id="ch-chl-monthly"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Salinitas Bulanan</h3>
+          <p class="chart-sub">Rata-rata salinitas (PSU). Data hanya ditampilkan pada periode yang memiliki nilai.</p>
+          <div class="stat-grid" id="salinity-cards"></div>
+          <div class="chart-box" style="--h:260px"><canvas id="ch-sal-monthly"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-duo-eq" style="margin-top:22px">
+        <div class="map-shell">
+          <div class="section-head-left ocean-map-heading" style="padding:16px 16px 0"><h3>Peta Klorofil-a</h3><p>Grid JAXA GCOM-C/SGLI, satuan mg/m³.</p></div>
+          <div id="chl-map" class="pg-map" style="--map-h:360px;height:360px"></div>
+          <p id="chl-map-count" class="text-xs text-muted" style="padding:6px 12px"></p>
+        </div>
+        <div class="map-shell salinity-map-shell">
+          <div class="section-head-left ocean-map-heading" style="padding:16px 16px 0"><h3>Peta Salinitas</h3><p>Grid salinitas sumber GeoJSON, satuan PSU; pilihan bulan hanya menampilkan periode bernilai.</p></div>
+          <div class="salinity-map-stage">
+            <div id="salinity-map" class="pg-map" style="--map-h:360px;height:360px"></div>
+            <div class="filter-bar salinity-map-filter" aria-label="Periode data salinitas"><div class="f-group"><label for="sal-year">Tahun tersedia</label><select id="sal-year" class="select"></select></div><div class="f-group"><label for="sal-month">Bulan tersedia</label><select id="sal-month" class="select"></select></div></div>
+            <div class="map-legend" id="salinity-legend"><h5>Salinitas (PSU)</h5><div class="lg-scale" style="background:linear-gradient(90deg,#2455D6,#D92727)"></div><div class="lg-row" style="justify-content:space-between"><span id="salinity-lg-min">–</span><span id="salinity-lg-max">–</span></div></div>
+          </div>
+          <p id="salinity-map-count" class="text-xs text-muted" style="padding:6px 12px"></p>
+        </div>
+      </div>
+      <div class="filter-bar" style="margin-top:18px" aria-label="Filter nilai klorofil-a dan salinitas">
+        <div class="f-group"><label for="f-chl-min">CHL minimum (mg/m³)</label><input type="number" step="0.01" id="f-chl-min" class="input" placeholder="Min"></div>
+        <div class="f-group"><label for="f-chl-max">CHL maksimum (mg/m³)</label><input type="number" step="0.01" id="f-chl-max" class="input" placeholder="Maks"></div>
+        <div class="f-group"><label for="f-sal-min">Salinitas minimum (PSU)</label><input type="number" step="0.1" id="f-sal-min" class="input" placeholder="Min"></div>
+        <div class="f-group"><label for="f-sal-max">Salinitas maksimum (PSU)</label><input type="number" step="0.1" id="f-sal-max" class="input" placeholder="Maks"></div>
+      </div>
+      <div class="note-strip warn" style="margin-top:16px"><i class="fa-solid fa-circle-info"></i><span>GeoJSON salinitas memuat nilai dari Januari 2022 sampai September 2024; periode setelahnya kosong dan tetap null. Kolom CSV valid_pixels menunjukkan jumlah piksel, bukan nilai salinitas. Data kosong tidak diinterpolasi. Resolusi spasial peta klorofil-a dan salinitas berbeda dari grid SST.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ HABITAT SUITABILITY GAM ============ -->
+  <section class="section habitat-suitability" id="habitat-suitability">
+    <div class="pg-container">
+      <div class="section-head-left">
+        <span class="kicker">Ringkasan kondisi perairan</span>
+        <h2>Kondisi Perairan yang Terkait dengan Catatan Penyu</h2>
+        <p id="gam-intro">Model membandingkan catatan perjumpaan penyu dengan kondisi perairan Rinca. Kisaran berikut merangkum pola yang muncul; ini bukan batas kebutuhan biologis atau bukti bahwa penyu memilih kondisi tersebut.</p>
+      </div>
+      <div class="gam-status" id="gam-status" role="status" aria-live="polite">Memuat ringkasan model…</div>
+      <div class="gam-summary-grid" id="gam-summary-grid"></div>
+      <details class="scientific-details">
+        <summary><span class="scientific-summary-icon" aria-hidden="true">i</span><span><strong>Lihat detail ilmiah</strong><small>Kurva respons, nilai p, dan metode pemodelan</small></span></summary>
+        <div class="scientific-details-body">
+          <p class="scientific-explainer"><strong>Cara membaca:</strong> garis kuning menunjukkan respons relatif model saat satu parameter berubah dan parameter lain ditahan pada nilai median. Pita bayangan menunjukkan interval kepercayaan 95%; pita ini menggambarkan ketidakpastian estimasi, bukan akurasi prediksi.</p>
+          <div class="gam-significance" id="gam-significance"></div>
+          <div class="gam-chart-grid">
+            <article class="gam-panel"><h3>Respons terhadap Suhu Permukaan Laut</h3><p>Parameter lain ditahan pada nilai median.</p><div class="gam-chart-wrap"><canvas id="gam-chart-sst" aria-label="Kurva respons suhu permukaan laut"></canvas></div></article>
+            <article class="gam-panel"><h3>Respons terhadap Salinitas</h3><p>Parameter lain ditahan pada nilai median.</p><div class="gam-chart-wrap"><canvas id="gam-chart-salinity" aria-label="Kurva respons salinitas"></canvas></div></article>
+            <article class="gam-panel"><h3>Respons terhadap Klorofil-a</h3><p>Parameter lain ditahan pada nilai median.</p><div class="gam-chart-wrap"><canvas id="gam-chart-chl" aria-label="Kurva respons klorofil-a"></canvas></div></article>
+          </div>
+          <div class="habitat-model-note"><strong>Metode &amp; batas interpretasi</strong><span id="gam-method-note">Model LogisticGAM menggunakan catatan iNaturalist dan titik latar acak dari sel SST valid. Titik latar merupakan pseudo-absence, bukan ketidakadaan penyu terverifikasi. Skor dipengaruhi desain sampling dan bukan peluang absolut keberadaan atau ukuran populasi. Hubungan yang terlihat bersifat korelatif, bukan sebab-akibat.</span></div>
+        </div>
+      </details>
+      <article class="gam-panel gam-map-panel">
+        <div class="gam-map-heading"><div><h3>Peta Indeks Kesesuaian Perairan</h3><p>Skor relatif model pada grid yang memiliki ketiga parameter lingkungan.</p></div><span id="gam-map-count" class="gam-map-count"></span></div>
+        <div id="habitat-suitability-map" class="gam-map" role="application" aria-label="Peta kesesuaian habitat penyu"></div>
+        <div class="gam-legend" aria-label="Legenda tingkat kesesuaian"><span><i class="gam-dot high"></i>Sangat Sesuai (&gt; 0,70)</span><span><i class="gam-dot medium"></i>Cukup Sesuai (0,40–0,70)</span><span><i class="gam-dot low"></i>Kurang Sesuai (&lt; 0,40)</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ KETERANGAN ============ -->
+  <section class="section">
+    <div class="pg-container">
+      <div class="card card-pad data-source-card">
+        <h4><i class="fa-solid fa-database"></i> Sumber Data &amp; Keterangan</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i><span>Sumber: <strong>NASA JPL MUR SST v4.1</strong> (analysed_sst), resolusi sekitar 1 km / 0,01°; diunduh melalui NOAA CoastWatch ERDDAP dan diolah menjadi agregat bulanan.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Periode data: Januari 2022–November 2026. Statistik deret waktu dihitung dari sel grid valid tiap bulan; peta SST menampilkan 559 titik grid.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Produk MUR mengisi celah data. Nilai pada area tertutup awan atau tanpa observasi langsung dapat berasal dari interpolasi dalam produk.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Hubungan SST dengan jumlah perjumpaan penyu bersifat <strong>korelasi deskriptif</strong> dan tidak menyatakan sebab-akibat.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Tren SST dihitung dengan regresi linear sederhana dari rata-rata tahunan sehingga bersifat <strong>indikatif</strong>.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Jalur migrasi tidak ditampilkan karena belum tersedia rangkaian pelacakan GPS. SSH belum dianalisis karena datasetnya belum tersedia.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../data/oceanographic/CHL_peta.js"></script>
+<script src="../js/oceanographic.js"></script>
+</body>
+</html>

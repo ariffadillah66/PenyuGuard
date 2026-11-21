@@ -1,0 +1,102 @@
+[
+ {
+  "id": "loc_001",
+  "name": "Zona Potensial Interaksi — Selat Molo",
+  "type": "interaction_zone",
+  "lat": -8.688,
+  "lng": 119.721,
+  "radius_m": 1800,
+  "description": "Area tumpang-tindih antara jalur aktivitas nelayan dan habitat penyu. Status potensial — bukan konfirmasi konflik.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_002",
+  "name": "Zona Potensial Interaksi — Loh Wenci",
+  "type": "interaction_zone",
+  "lat": -8.706,
+  "lng": 119.739,
+  "radius_m": 1400,
+  "description": "Aktivitas perikanan skala kecil dan budidaya berdekatan dengan padang lamun. Status potensial — bukan konfirmasi konflik.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_003",
+  "name": "Zona Potensial Interaksi — Perairan Kampung Komodo",
+  "type": "interaction_zone",
+  "lat": -8.577,
+  "lng": 119.495,
+  "radius_m": 1600,
+  "description": "Lalu lintas perahu wisata dan perikanan tradisional. Status potensial — bukan konfirmasi konflik.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_004",
+  "name": "Zona Potensial Interaksi — Teluk Wainilu",
+  "type": "interaction_zone",
+  "lat": -8.742,
+  "lng": 119.745,
+  "radius_m": 1200,
+  "description": "Perairan tenang dengan aktivitas budidaya rumput laut. Status potensial — bukan konfirmasi konflik.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_005",
+  "name": "Lokasi Peneluran Teridentifikasi #1",
+  "type": "nesting_sensitive",
+  "lat": -8.7612,
+  "lng": 119.725,
+  "radius_m": 0,
+  "description": "Lokasi sarang sensitif — koordinat publik diaproksimasi dan dapat disembunyikan sepenuhnya.",
+  "public_visible": false
+ },
+ {
+  "id": "loc_006",
+  "name": "Lokasi Peneluran Teridentifikasi #2",
+  "type": "nesting_sensitive",
+  "lat": -8.715,
+  "lng": 119.748,
+  "radius_m": 0,
+  "description": "Lokasi sarang sensitif — koordinat publik diaproksimasi dan dapat disembunyikan sepenuhnya.",
+  "public_visible": false
+ },
+ {
+  "id": "loc_007",
+  "name": "Lokasi Peneluran Teridentifikasi #3",
+  "type": "nesting_sensitive",
+  "lat": -8.7905,
+  "lng": 119.6985,
+  "radius_m": 0,
+  "description": "Lokasi sarang sensitif — koordinat publik diaproksimasi dan dapat disembunyikan sepenuhnya.",
+  "public_visible": false
+ },
+ {
+  "id": "loc_008",
+  "name": "Titik Perjumpaan Berulang — Loh Dasami",
+  "type": "hotspot",
+  "lat": -8.773,
+  "lng": 119.69,
+  "radius_m": 0,
+  "description": "Beberapa laporan perjumpaan terverifikasi tercatat pada area ini.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_009",
+  "name": "Titik Perjumpaan Berulang — Pulau Kode",
+  "type": "hotspot",
+  "lat": -8.788,
+  "lng": 119.704,
+  "radius_m": 0,
+  "description": "Beberapa laporan perjumpaan terverifikasi tercatat pada area ini.",
+  "public_visible": true
+ },
+ {
+  "id": "loc_010",
+  "name": "Titik Perjumpaan Berulang — Gili Motang",
+  "type": "hotspot",
+  "lat": -8.842,
+  "lng": 119.706,
+  "radius_m": 0,
+  "description": "Beberapa laporan perjumpaan terverifikasi tercatat pada area ini.",
+  "public_visible": true
+ }
+]

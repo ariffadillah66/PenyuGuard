@@ -1,0 +1,256 @@
+/* ============================================================
+   PenyuGuard — admin.css
+   Layout & komponen khusus Admin Console (kompatibel style.css)
+   ============================================================ */
+
+/* ---------- Body & kerangka ---------- */
+.adm-body { background: var(--pg-bg); }
+
+.adm-layout { display: flex; min-height: 100vh; }
+
+/* ---------- Sidebar ---------- */
+.adm-sidebar {
+  width: 262px; flex-shrink: 0; background: var(--pg-grad-navy); color: #fff;
+  position: fixed; top: 0; bottom: 0; left: 0; z-index: 1100;
+  display: flex; flex-direction: column; transition: transform .3s ease;
+}
+.adm-brand {
+  display: flex; align-items: center; gap: 11px; padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1); flex-shrink: 0;
+}
+.adm-brand img { width: 40px; height: 40px; border-radius: 11px; box-shadow: 0 4px 12px rgba(0, 0, 0, .25); }
+.adm-brand-text { line-height: 1.2; min-width: 0; }
+.adm-brand-text strong { display: block; font-family: var(--pg-font-head); font-size: 17.5px; font-weight: 800; color: #fff; }
+.adm-brand-text strong em { font-style: normal; color: var(--pg-teal); }
+.adm-brand-text small { font-size: 10.5px; color: rgba(255, 255, 255, .55); letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700; }
+
+.adm-nav { flex: 1; overflow-y: auto; padding: 14px 12px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.22) transparent; }
+.adm-nav::-webkit-scrollbar { width: 6px; }
+.adm-nav::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .22); border-radius: 99px; }
+.adm-nav-label {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, .45); font-weight: 700; margin: 14px 14px 8px;
+}
+.adm-nav .adm-nav-label:first-child { margin-top: 2px; }
+
+.adm-nav-item {
+  display: flex; gap: 12px; align-items: center; padding: 11px 14px; border-radius: 11px;
+  color: rgba(255, 255, 255, .72); font-size: 14px; font-weight: 500; margin-bottom: 3px;
+  text-decoration: none; transition: background .18s ease, color .18s ease;
+}
+.adm-nav-item i { width: 19px; text-align: center; font-size: 14.5px; }
+.adm-nav-item:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.adm-nav-item.active { background: var(--pg-teal); color: #101440; box-shadow: 0 4px 12px rgba(217, 255, 71, .35); font-weight: 600; }
+.adm-nav-text { flex: 1; min-width: 0; }
+.adm-nav-tag {
+  font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px;
+  background: rgba(255, 255, 255, .14); color: rgba(255, 255, 255, .85);
+  padding: 2.5px 7px; border-radius: 999px; flex-shrink: 0;
+}
+.adm-nav-item.active .adm-nav-tag { background: rgba(255, 255, 255, .24); color: #fff; }
+.adm-badge-count {
+  margin-left: auto; background: #E9A03B; color: #fff; font-size: 10.5px; font-weight: 700;
+  border-radius: 999px; padding: 1.5px 7.5px; min-width: 20px; text-align: center; flex-shrink: 0;
+}
+
+.adm-sidebar-foot { padding: 14px; border-top: 1px solid rgba(255, 255, 255, .1); flex-shrink: 0; }
+.adm-userchip {
+  display: flex; align-items: center; gap: 11px; padding: 9px 10px;
+  border-radius: 12px; background: rgba(255, 255, 255, .07); margin-bottom: 10px;
+}
+.adm-userchip .avatar { width: 38px; height: 38px; font-size: 13px; }
+.adm-userchip-meta { min-width: 0; }
+.adm-userchip-meta strong { display: block; font-size: 13.5px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.adm-userchip-meta small { font-size: 11px; color: rgba(255, 255, 255, .6); font-weight: 600; }
+.adm-public-link {
+  display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%;
+  padding: 9.5px 12px; border-radius: 10px; border: 1.4px solid rgba(255, 255, 255, .28);
+  color: rgba(255, 255, 255, .85); font-size: 13px; font-weight: 600; text-decoration: none; transition: all .2s;
+}
+.adm-public-link:hover { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .45); }
+
+/* ---------- Area utama & topbar ---------- */
+.adm-main { flex: 1; margin-left: 262px; display: flex; flex-direction: column; min-width: 0; }
+
+.adm-topbar {
+  height: 64px; background: #fff; border-bottom: 1px solid var(--pg-border);
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 0 22px; position: sticky; top: 0; z-index: 1000;
+}
+.adm-topbar-title { display: flex; flex-direction: column; min-width: 0; }
+.adm-topbar-title h1 { font-size: 16.5px; line-height: 1.25; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.adm-crumb { font-size: 12px; color: var(--pg-muted); }
+.adm-topbar-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.adm-demo-chip { cursor: default; }
+.adm-burger {
+  display: none; align-items: center; justify-content: center; width: 40px; height: 40px;
+  border-radius: 10px; border: 1.4px solid var(--pg-border); background: var(--pg-bg);
+  color: var(--pg-navy); font-size: 16px; flex-shrink: 0;
+}
+.adm-burger:hover { border-color: var(--pg-teal); color: var(--pg-teal-deep); }
+.adm-user-wrap { position: relative; }
+.adm-user-wrap .pg-dropdown { z-index: 1050; }
+
+/* ---------- Konten & footer ---------- */
+.adm-content { padding: 26px; flex: 1; }
+.adm-page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.adm-page-head h1 { font-size: 22px; }
+.adm-page-head p { color: var(--pg-muted); font-size: 13.5px; margin-top: 5px; }
+
+.adm-footer {
+  padding: 14px 26px; border-top: 1px solid var(--pg-border); font-size: 12.3px;
+  color: var(--pg-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+
+/* ---------- Grid dashboard ---------- */
+.adm-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 16px; }
+.adm-2col { display: grid; grid-template-columns: 1.55fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 1200px) { .adm-2col { grid-template-columns: 1fr; } }
+
+.chart-card h3 i, .card-head h3 i { color: var(--pg-ocean); margin-right: 7px; font-size: .88em; }
+
+/* ---------- Aksi cepat ---------- */
+.adm-quick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.adm-quick-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+  padding: 14px; border-radius: 12px; border: 1.5px solid var(--pg-border);
+  background: #fff; color: var(--pg-navy); text-decoration: none; transition: all .2s;
+}
+.adm-quick-btn i {
+  width: 36px; height: 36px; border-radius: 10px; background: var(--pg-aqua-soft);
+  color: var(--pg-teal-deep); display: inline-flex; align-items: center; justify-content: center;
+  font-size: 15px; margin-bottom: 6px;
+}
+.adm-quick-btn span { font-size: 13.5px; font-weight: 700; }
+.adm-quick-btn small { font-size: 11.5px; color: var(--pg-muted); }
+.adm-quick-btn:hover { border-color: var(--pg-teal); box-shadow: var(--pg-shadow-sm); transform: translateY(-2px); color: var(--pg-navy); }
+
+/* ---------- Filter tab verifikasi ---------- */
+.verif-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.verif-tab {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 999px;
+  background: #fff; border: 1.5px solid var(--pg-border); color: var(--pg-muted);
+  font-size: 13.5px; font-weight: 600; cursor: pointer; transition: all .2s;
+}
+.verif-tab:hover { border-color: var(--pg-teal); color: var(--pg-teal-deep); }
+.verif-tab.active { background: var(--pg-navy); border-color: var(--pg-navy); color: #fff; }
+.verif-tab .vt-count { font-size: 11px; font-weight: 700; background: var(--pg-aqua-soft); color: var(--pg-ocean); border-radius: 999px; padding: 1px 7.5px; }
+.verif-tab.active .vt-count { background: rgba(255, 255, 255, .18); color: #fff; }
+
+/* ---------- Pencarian kecil ---------- */
+.adm-search { position: relative; width: 100%; }
+.adm-search > i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9DB2BC; font-size: 13.5px; pointer-events: none; }
+.adm-search .input { padding-left: 40px; padding-top: 9.5px; padding-bottom: 9.5px; font-size: 13.5px; border-radius: 10px; }
+
+/* ---------- Kaki tabel ---------- */
+.adm-table-foot { padding: 2px 24px 18px; }
+.adm-table-foot .pagination { margin-top: 14px; }
+
+/* ---------- Grid formulir (modal besar) ---------- */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-grid .span-2 { grid-column: span 2; }
+.form-grid .field { margin-bottom: 0; }
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .span-2 { grid-column: span 1; }
+}
+
+/* ---------- Info grid (modal detail/periksa) ---------- */
+.adm-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; }
+.adm-info-grid .span-2 { grid-column: span 2; }
+@media (max-width: 640px) { .adm-info-grid { grid-template-columns: 1fr; } }
+.info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: var(--pg-muted); margin-bottom: 3px; display: block; }
+.info-value { font-size: 14px; color: var(--pg-text); font-weight: 500; word-break: break-word; }
+.info-value a { color: var(--pg-ocean); font-weight: 600; }
+
+.adm-photo-placeholder {
+  border: 1.5px dashed var(--pg-border); border-radius: var(--pg-radius); background: #FAFDFC;
+  color: var(--pg-muted); display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 8px; padding: 34px 20px; font-size: 13px;
+}
+.adm-photo-placeholder i { font-size: 26px; color: #B9CDD6; }
+.preview-img-wrap.img-340 img { max-height: 340px; }
+
+/* ---------- Grid pengaturan ---------- */
+.adm-settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 960px) { .adm-settings-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Overlay drawer (mobile) ---------- */
+.adm-drawer-overlay {
+  position: fixed; inset: 0; background: rgba(11, 36, 48, .5); z-index: 1090;
+  opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease;
+}
+.adm-layout.show-drawer .adm-drawer-overlay { opacity: 1; visibility: visible; }
+
+/* ---------- Responsif ---------- */
+@media (max-width: 992px) {
+  .adm-sidebar { transform: translateX(-105%); }
+  .adm-layout.show-drawer .adm-sidebar { transform: none; box-shadow: var(--pg-shadow-lg); }
+  .adm-main { margin-left: 0; }
+  .adm-burger { display: inline-flex; }
+  .adm-content { padding: 18px 16px 26px; }
+  .adm-topbar { padding: 0 16px; }
+  .adm-footer { padding: 14px 16px; }
+}
+@media (max-width: 560px) {
+  .adm-topbar .pg-usermeta { display: none; }
+  .adm-demo-chip { display: none; }
+  .adm-quick { grid-template-columns: 1fr; }
+}
+
+/* ---------- Halaman login admin (mandiri) ---------- */
+.adm-login { min-height: 100vh; display: flex; background: var(--pg-bg); }
+.adm-login-hero {
+  flex: 1.05; background: var(--pg-grad-navy); color: #fff; padding: 56px 52px;
+  display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+}
+.adm-login-hero::after {
+  content: ''; position: absolute; right: -140px; top: -140px; width: 420px; height: 420px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(217, 255, 71, .32), transparent 68%);
+}
+.adm-login-hero::before {
+  content: ''; position: absolute; left: -100px; bottom: -160px; width: 360px; height: 360px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(0, 0, 255, .34), transparent 70%);
+}
+.adm-login-hero-inner { position: relative; z-index: 1; max-width: 540px; }
+.adm-login-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+.adm-login-logo img { width: 56px; height: 56px; border-radius: 16px; box-shadow: 0 10px 26px rgba(0, 0, 0, .28); }
+.adm-brand img, .adm-login-logo img { object-fit: cover; object-position: center; background: #F5F5FF; }
+.adm-login-logo-name { font-family: var(--pg-font-head); font-size: 22px; font-weight: 800; line-height: 1.15; }
+.adm-login-logo-name em { font-style: normal; color: var(--pg-teal); }
+.adm-login-logo-sub { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, .55); font-weight: 700; }
+.adm-login-hero h1 { font-size: 32px; color: #fff; margin-bottom: 12px; }
+.adm-login-hero h1 em { font-style: normal; color: var(--pg-teal); }
+.adm-login-hero > .adm-login-hero-inner > p { color: rgba(255, 255, 255, .78); font-size: 15px; line-height: 1.75; margin-bottom: 26px; }
+.adm-login-feats { list-style: none; display: grid; gap: 12px; margin-bottom: 30px; }
+.adm-login-feats li { display: flex; gap: 12px; align-items: center; font-size: 14px; color: rgba(255, 255, 255, .85); }
+.adm-login-feats i {
+  width: 34px; height: 34px; border-radius: 10px; background: rgba(255, 255, 255, .1);
+  color: var(--pg-teal); display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+
+.adm-login-panel { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+.adm-login-card { width: 100%; max-width: 434px; }
+.adm-login-card .card { box-shadow: var(--pg-shadow-md); }
+.adm-login-card .card-pad { padding: 34px 32px 28px; }
+.adm-demo-accounts { border: 1.5px dashed #F0DDBA; background: #FEFAF2; border-radius: 12px; padding: 14px 15px; margin-top: 22px; }
+.adm-demo-accounts h5 {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: .8px; color: #8A5B10;
+  margin-bottom: 10px; display: flex; gap: 7px; align-items: center; font-weight: 700;
+}
+.adm-demo-account {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;
+  background: #fff; border: 1px solid var(--pg-border); border-radius: 10px; padding: 9px 12px;
+  margin-bottom: 8px; cursor: pointer; text-align: left; transition: all .18s; font-family: inherit;
+}
+.adm-demo-account:hover { border-color: var(--pg-teal); box-shadow: var(--pg-shadow-sm); }
+.adm-demo-account:last-child { margin-bottom: 0; }
+.adm-demo-account strong { font-size: 13px; display: block; color: var(--pg-navy); }
+.adm-demo-account small { font-size: 11.5px; color: var(--pg-muted); }
+.adm-demo-account .badge { flex-shrink: 0; }
+.adm-login-foot { text-align: center; font-size: 12.3px; color: var(--pg-muted); margin-top: 22px; }
+@media (max-width: 900px) {
+  .adm-login-hero { display: none; }
+  .adm-login-panel { padding: 28px 16px; }
+}

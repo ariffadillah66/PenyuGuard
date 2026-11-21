@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ringkasan Admin — PenyuGuard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body class="adm-body" data-auth-area="admin" data-require="staff" data-active="dashboard">
+<div class="adm-layout" id="adm-layout">
+  <aside class="adm-sidebar" id="pg-sidebar"></aside>
+  <div class="adm-drawer-overlay" id="adm-overlay"></div>
+  <div class="adm-main">
+    <header class="adm-topbar" id="pg-topbar"></header>
+    <main class="adm-content">
+      <div class="adm-page-head">
+        <div>
+          <h1>Ringkasan Admin</h1>
+          <p>Ringkasan perjumpaan, laporan yang perlu ditinjau, data persebaran, dan aktivitas pada penyimpanan aktif.</p>
+        </div>
+        <span class="badge badge-info adm-demo-chip"><i class="fa-solid fa-database"></i> Memeriksa penyimpanan…</span>
+      </div>
+      <div class="adm-stat-grid" id="adm-stats"></div>
+      <div id="adm-charts"></div>
+      <div id="adm-lower"></div>
+    </main>
+    <footer class="adm-footer" id="adm-footer"></footer>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/admin/admin.js"></script>
+</body>
+</html>

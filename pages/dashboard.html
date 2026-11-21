@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ringkasan Analitik Publik — PenyuGuard</title>
+  <meta name="description" content="Dashboard publik PenyuGuard: ringkasan perjumpaan penyu, lokasi budidaya, dan parameter oseanografi yang tersedia.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="dashboard">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span class="badge"><i class="fa-solid fa-gauge-high"></i> Ringkasan Publik</span>
+      <h1>Ringkasan Analitik Publik</h1>
+      <p>Ringkasan data perjumpaan penyu, budidaya, dan oseanografi di sekitar Pulau Rinca. Halaman ini merangkum
+      PenyuGuard: pemantauan, peta persebaran, oseanografi, serta edukasi. Asal data ditampilkan di bawah;
+      grafik perjumpaan hanya mencakup data berstatus Disetujui.</p>
+    </div>
+  </section>
+
+  <!-- ============ KONTEN ============ -->
+  <section class="section" style="padding-top:44px">
+    <div class="pg-container">
+
+      <!-- Toolbar: info + filter -->
+      <div class="dash-toolbar">
+        <div class="dash-toolbar-top">
+          <span class="updated" id="dash-updated"><i class="fa-solid fa-rotate"></i> Pembaruan data terakhir: –</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge badge-info" id="dash-origin-badge"><i class="fa-solid fa-database"></i> Memeriksa sumber data…</span>
+            <span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Rekaman publik · sumber tercantum</span>
+          </div>
+        </div>
+        <div class="filter-bar">
+          <div class="f-group">
+            <label for="f-year">Tahun</label>
+            <select id="f-year" class="select"></select>
+          </div>
+          <div class="f-group">
+            <label for="f-month">Bulan</label>
+            <select id="f-month" class="select"></select>
+          </div>
+          <div class="f-group f-grow">
+            <label for="f-species">Spesies</label>
+            <select id="f-species" class="select"></select>
+          </div>
+          <div class="f-group f-grow">
+            <label for="f-location">Lokasi</label>
+            <select id="f-location" class="select"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="pg-grid" style="margin:18px 0 22px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+        <a class="card card-pad card-hover" href="oceanographic.html"><strong><i class="fa-solid fa-temperature-half" style="color:var(--pg-orange)"></i> SST</strong><p class="text-sm text-muted mt-8">Suhu permukaan laut dan grid peta.</p></a>
+        <a class="card card-pad card-hover" href="oceanographic.html#parameter-ocean"><strong><i class="fa-solid fa-leaf" style="color:var(--pg-teal)"></i> Klorofil-a</strong><p class="text-sm text-muted mt-8">Konsentrasi produktivitas fitoplankton.</p></a>
+        <a class="card card-pad card-hover" href="oceanographic.html#parameter-ocean"><strong><i class="fa-solid fa-water" style="color:var(--pg-ocean)"></i> Salinitas</strong><p class="text-sm text-muted mt-8">Kadar garam pada periode data tersedia.</p></a>
+      </div>
+
+      <!-- Kartu ringkasan -->
+      <div class="kpi-6" id="dash-kpis"></div>
+
+      <!-- Grafik 1 & 2 -->
+      <div class="chart-duo">
+        <div class="chart-card">
+          <h3>Tren Perjumpaan Penyu per Bulan</h3>
+          <p class="chart-sub">Jumlah rekaman perjumpaan pada periode terpilih; kualitas dan sumber tercantum pada data.</p>
+          <div class="chart-box" style="--h:300px"><canvas id="ch-trend"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Komposisi Spesies Penyu</h3>
+          <p class="chart-sub">Proporsi spesies pada laporan perjumpaan terfilter.</p>
+          <div class="chart-box" style="--h:300px"><canvas id="ch-species"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Grafik 3 -->
+      <div class="chart-stack">
+        <div class="chart-card">
+          <h3>Perubahan Suhu Permukaan Laut</h3>
+          <p class="chart-sub">SST rata-rata bulanan (°C) dari sumber oseanografi yang tersedia, mengikuti filter tahun &amp; bulan.</p>
+          <div class="chart-box" style="--h:280px"><canvas id="ch-sst"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Sumber data -->
+      <div class="card card-pad data-source-card">
+        <h4><i class="fa-solid fa-database"></i> Sumber Data &amp; Keterangan</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i><span id="dash-origin-detail">Memuat asal data…</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Laporan masyarakat harus diverifikasi petugas sebelum dipublikasikan; observasi iNaturalist menampilkan tingkat kualitas (quality grade) aslinya.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Jumlah perjumpaan merupakan <strong>indeks observasi kehadiran penyu</strong>, bukan estimasi populasi absolut.</span></li>
+          <li><i class="fa-solid fa-circle"></i><span>Hubungan antar variabel bersifat korelatif dan <strong>bukan hubungan sebab-akibat</strong>.</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

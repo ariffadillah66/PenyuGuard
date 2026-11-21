@@ -1,0 +1,533 @@
+[
+  {
+    "id": "sst_001",
+    "year": 2022,
+    "month": 1,
+    "sst_mean_c": 28.84,
+    "sst_min_c": 28.74,
+    "sst_max_c": 28.97,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_002",
+    "year": 2022,
+    "month": 2,
+    "sst_mean_c": 28.96,
+    "sst_min_c": 28.86,
+    "sst_max_c": 29.12,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_003",
+    "year": 2022,
+    "month": 3,
+    "sst_mean_c": 29.14,
+    "sst_min_c": 29.07,
+    "sst_max_c": 29.27,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_004",
+    "year": 2022,
+    "month": 4,
+    "sst_mean_c": 29.48,
+    "sst_min_c": 29.31,
+    "sst_max_c": 29.75,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_005",
+    "year": 2022,
+    "month": 5,
+    "sst_mean_c": 28.87,
+    "sst_min_c": 28.57,
+    "sst_max_c": 29.29,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_006",
+    "year": 2022,
+    "month": 6,
+    "sst_mean_c": 28.5,
+    "sst_min_c": 28.15,
+    "sst_max_c": 29.01,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_007",
+    "year": 2022,
+    "month": 7,
+    "sst_mean_c": 27.39,
+    "sst_min_c": 26.72,
+    "sst_max_c": 28.22,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_008",
+    "year": 2022,
+    "month": 8,
+    "sst_mean_c": 27.03,
+    "sst_min_c": 26.45,
+    "sst_max_c": 27.82,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_009",
+    "year": 2022,
+    "month": 9,
+    "sst_mean_c": 27.71,
+    "sst_min_c": 27.33,
+    "sst_max_c": 28.18,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_010",
+    "year": 2022,
+    "month": 10,
+    "sst_mean_c": 28.79,
+    "sst_min_c": 28.6,
+    "sst_max_c": 29.14,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_011",
+    "year": 2022,
+    "month": 11,
+    "sst_mean_c": 29.57,
+    "sst_min_c": 29.55,
+    "sst_max_c": 29.61,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_012",
+    "year": 2022,
+    "month": 12,
+    "sst_mean_c": 29.53,
+    "sst_min_c": 29.5,
+    "sst_max_c": 29.58,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_013",
+    "year": 2023,
+    "month": 1,
+    "sst_mean_c": 28.61,
+    "sst_min_c": 28.46,
+    "sst_max_c": 28.76,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_014",
+    "year": 2023,
+    "month": 2,
+    "sst_mean_c": 28.69,
+    "sst_min_c": 28.64,
+    "sst_max_c": 28.78,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_015",
+    "year": 2023,
+    "month": 3,
+    "sst_mean_c": 29.12,
+    "sst_min_c": 28.85,
+    "sst_max_c": 29.39,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_016",
+    "year": 2023,
+    "month": 4,
+    "sst_mean_c": 29.02,
+    "sst_min_c": 28.95,
+    "sst_max_c": 29.14,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_017",
+    "year": 2023,
+    "month": 5,
+    "sst_mean_c": 27.93,
+    "sst_min_c": 27.4,
+    "sst_max_c": 28.62,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_018",
+    "year": 2023,
+    "month": 6,
+    "sst_mean_c": 27.22,
+    "sst_min_c": 26.61,
+    "sst_max_c": 28.01,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_019",
+    "year": 2023,
+    "month": 7,
+    "sst_mean_c": 26.88,
+    "sst_min_c": 26.23,
+    "sst_max_c": 27.7,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_020",
+    "year": 2023,
+    "month": 8,
+    "sst_mean_c": 26.71,
+    "sst_min_c": 25.95,
+    "sst_max_c": 27.68,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_021",
+    "year": 2023,
+    "month": 9,
+    "sst_mean_c": 26.4,
+    "sst_min_c": 25.95,
+    "sst_max_c": 27.1,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_022",
+    "year": 2023,
+    "month": 10,
+    "sst_mean_c": 27.74,
+    "sst_min_c": 27.48,
+    "sst_max_c": 28.24,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_023",
+    "year": 2023,
+    "month": 11,
+    "sst_mean_c": 29.18,
+    "sst_min_c": 28.96,
+    "sst_max_c": 29.52,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_024",
+    "year": 2023,
+    "month": 12,
+    "sst_mean_c": 29.16,
+    "sst_min_c": 29.11,
+    "sst_max_c": 29.28,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_025",
+    "year": 2024,
+    "month": 1,
+    "sst_mean_c": 29.58,
+    "sst_min_c": 29.5,
+    "sst_max_c": 29.7,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_026",
+    "year": 2024,
+    "month": 2,
+    "sst_mean_c": 29.28,
+    "sst_min_c": 29.04,
+    "sst_max_c": 29.59,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_027",
+    "year": 2024,
+    "month": 3,
+    "sst_mean_c": 29.77,
+    "sst_min_c": 29.51,
+    "sst_max_c": 29.96,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_028",
+    "year": 2024,
+    "month": 4,
+    "sst_mean_c": 29.05,
+    "sst_min_c": 28.9,
+    "sst_max_c": 29.31,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_029",
+    "year": 2024,
+    "month": 5,
+    "sst_mean_c": 28.15,
+    "sst_min_c": 27.42,
+    "sst_max_c": 29.15,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_030",
+    "year": 2024,
+    "month": 6,
+    "sst_mean_c": 27.58,
+    "sst_min_c": 26.86,
+    "sst_max_c": 28.55,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_031",
+    "year": 2024,
+    "month": 7,
+    "sst_mean_c": 26.92,
+    "sst_min_c": 26.26,
+    "sst_max_c": 27.72,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_032",
+    "year": 2024,
+    "month": 8,
+    "sst_mean_c": 26.89,
+    "sst_min_c": 26.3,
+    "sst_max_c": 27.83,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_033",
+    "year": 2024,
+    "month": 9,
+    "sst_mean_c": 27.57,
+    "sst_min_c": 27.13,
+    "sst_max_c": 28.3,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_034",
+    "year": 2024,
+    "month": 10,
+    "sst_mean_c": 28.25,
+    "sst_min_c": 27.97,
+    "sst_max_c": 28.81,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_035",
+    "year": 2024,
+    "month": 11,
+    "sst_mean_c": 29.45,
+    "sst_min_c": 29.3,
+    "sst_max_c": 29.64,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_036",
+    "year": 2024,
+    "month": 12,
+    "sst_mean_c": 29.51,
+    "sst_min_c": 29.4,
+    "sst_max_c": 29.61,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_037",
+    "year": 2025,
+    "month": 1,
+    "sst_mean_c": 29.08,
+    "sst_min_c": 29.01,
+    "sst_max_c": 29.15,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_038",
+    "year": 2025,
+    "month": 2,
+    "sst_mean_c": 28.71,
+    "sst_min_c": 28.53,
+    "sst_max_c": 28.92,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_039",
+    "year": 2025,
+    "month": 3,
+    "sst_mean_c": 29.35,
+    "sst_min_c": 29.25,
+    "sst_max_c": 29.56,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_040",
+    "year": 2025,
+    "month": 4,
+    "sst_mean_c": 29.4,
+    "sst_min_c": 29.32,
+    "sst_max_c": 29.54,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_041",
+    "year": 2025,
+    "month": 5,
+    "sst_mean_c": 28.95,
+    "sst_min_c": 28.64,
+    "sst_max_c": 29.31,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_042",
+    "year": 2025,
+    "month": 6,
+    "sst_mean_c": 27.98,
+    "sst_min_c": 27.54,
+    "sst_max_c": 28.63,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_043",
+    "year": 2025,
+    "month": 7,
+    "sst_mean_c": 27.27,
+    "sst_min_c": 26.66,
+    "sst_max_c": 28.09,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_044",
+    "year": 2025,
+    "month": 8,
+    "sst_mean_c": 27.0,
+    "sst_min_c": 26.45,
+    "sst_max_c": 27.79,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_045",
+    "year": 2025,
+    "month": 9,
+    "sst_mean_c": 27.56,
+    "sst_min_c": 27.24,
+    "sst_max_c": 28.07,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_046",
+    "year": 2025,
+    "month": 10,
+    "sst_mean_c": 28.61,
+    "sst_min_c": 28.23,
+    "sst_max_c": 29.17,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_047",
+    "year": 2025,
+    "month": 11,
+    "sst_mean_c": 29.6,
+    "sst_min_c": 29.54,
+    "sst_max_c": 29.7,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_048",
+    "year": 2025,
+    "month": 12,
+    "sst_mean_c": 29.38,
+    "sst_min_c": 29.29,
+    "sst_max_c": 29.47,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_049",
+    "year": 2026,
+    "month": 1,
+    "sst_mean_c": 28.62,
+    "sst_min_c": 28.47,
+    "sst_max_c": 28.77,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_050",
+    "year": 2026,
+    "month": 2,
+    "sst_mean_c": 28.48,
+    "sst_min_c": 28.32,
+    "sst_max_c": 28.63,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_051",
+    "year": 2026,
+    "month": 3,
+    "sst_mean_c": 28.26,
+    "sst_min_c": 28.17,
+    "sst_max_c": 28.52,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_052",
+    "year": 2026,
+    "month": 4,
+    "sst_mean_c": 28.94,
+    "sst_min_c": 28.66,
+    "sst_max_c": 29.38,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_053",
+    "year": 2026,
+    "month": 5,
+    "sst_mean_c": 28.21,
+    "sst_min_c": 27.72,
+    "sst_max_c": 28.99,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_054",
+    "year": 2026,
+    "month": 6,
+    "sst_mean_c": 27.56,
+    "sst_min_c": 26.97,
+    "sst_max_c": 28.32,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_055",
+    "year": 2026,
+    "month": 7,
+    "sst_mean_c": 26.91,
+    "sst_min_c": 26.32,
+    "sst_max_c": 27.81,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_056",
+    "year": 2026,
+    "month": 8,
+    "sst_mean_c": 26.28,
+    "sst_min_c": 25.68,
+    "sst_max_c": 27.07,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_057",
+    "year": 2026,
+    "month": 9,
+    "sst_mean_c": 26.53,
+    "sst_min_c": 26.07,
+    "sst_max_c": 27.17,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_058",
+    "year": 2026,
+    "month": 10,
+    "sst_mean_c": 27.68,
+    "sst_min_c": 27.42,
+    "sst_max_c": 28.04,
+    "valid_cells": 559
+  },
+  {
+    "id": "sst_059",
+    "year": 2026,
+    "month": 11,
+    "sst_mean_c": 29.12,
+    "sst_min_c": 28.93,
+    "sst_max_c": 29.37,
+    "valid_cells": 559
+  }
+]

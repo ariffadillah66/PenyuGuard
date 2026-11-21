@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporkan Penyu — PenyuGuard</title>
+  <meta name="description" content="Kirim laporan perjumpaan penyu atau penyu terdampar di sekitar Pulau Rinca untuk diverifikasi petugas.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="lapor" data-require="user">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span class="badge"><i class="fa-solid fa-bullhorn"></i> Pelaporan Publik</span>
+      <h1>Laporkan Penyu</h1>
+      <p>Setiap perjumpaan penyu berharga bagi pemetaan persebaran. Isi formulir di bawah dengan jujur dan lengkap —
+      petugas kami akan memverifikasi setiap laporan sebelum dipublikasikan.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:44px">
+    <div class="pg-container">
+
+      <div class="alert alert-info mb-20" style="max-width:760px;margin-left:auto;margin-right:auto">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Semua laporan masuk <strong>antrean verifikasi operator/admin</strong>. Laporan baru
+        <strong>TIDAK langsung tampil</strong> di peta &amp; statistik publik sebelum berstatus
+        <strong>Disetujui</strong>.</span>
+      </div>
+
+      <!-- ============ FORMULIR ============ -->
+      <div class="card card-pad" id="report-form-card" style="max-width:760px;margin:0 auto">
+        <h3 style="font-size:18px;margin-bottom:4px"><i class="fa-solid fa-pen-to-square" style="color:var(--pg-teal)"></i> Formulir Laporan Kejadian</h3>
+        <p class="text-sm text-muted mb-16">Data bertanda <span style="color:var(--pg-danger)">*</span> wajib diisi.</p>
+
+        <form id="report-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="r-name">Nama Pelapor</label>
+              <input type="text" id="r-name" name="reporter_name" class="input" readonly>
+              <span class="hint"><i class="fa-solid fa-lock"></i> diambil dari profil akun</span>
+            </div>
+            <div class="field">
+              <label for="r-email">Email Pelapor</label>
+              <input type="email" id="r-email" name="reporter_email" class="input" readonly>
+              <span class="hint"><i class="fa-solid fa-lock"></i> diambil dari profil akun</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="r-datetime">Tanggal &amp; Waktu Kejadian <span class="req">*</span></label>
+            <input type="datetime-local" id="r-datetime" name="incident_datetime" class="input" required>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="field">
+            <label for="r-location">Lokasi Kejadian <span class="req">*</span></label>
+            <input type="text" id="r-location" name="location_name" class="input" placeholder="mis. Perairan Loh Wenci" required>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="r-lat">Lintang <span class="req">*</span></label>
+              <input type="number" id="r-lat" name="lat" class="input" step="any" placeholder="-8.706" required>
+              <div class="field-error"></div>
+            </div>
+            <div class="field">
+              <label for="r-lng">Bujur <span class="req">*</span></label>
+              <input type="number" id="r-lng" name="lng" class="input" step="any" placeholder="119.739" required>
+              <div class="field-error"></div>
+            </div>
+          </div>
+          <div class="mb-16">
+            <button type="button" class="btn btn-ghost btn-sm" id="btn-geo">
+              <i class="fa-solid fa-location-crosshairs"></i> Ambil Lokasi Saya
+            </button>
+            <span class="hint" style="display:inline-block;margin-left:8px">Peramban akan meminta izin akses lokasi perangkat.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="r-type">Jenis Kejadian <span class="req">*</span></label>
+              <select id="r-type" name="incident_type" class="select" required></select>
+              <div class="field-error"></div>
+            </div>
+            <div class="field">
+              <label for="r-species">Spesies</label>
+              <select id="r-species" name="species" class="select">
+                <option value="Tidak diketahui">Tidak diketahui</option>
+                <option value="Penyu Hijau">Penyu Hijau</option>
+                <option value="Penyu Sisik">Penyu Sisik</option>
+                <option value="Penyu Lekang">Penyu Lekang</option>
+                <option value="Penyu Tempayan">Penyu Tempayan</option>
+              </select>
+              <span class="hint">Pilih "Tidak diketahui" bila ragu — petugas membantu identifikasi dari foto.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="r-condition">Kondisi Penyu <span class="req">*</span></label>
+            <select id="r-condition" name="condition" class="select" required></select>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="field">
+            <label for="r-desc">Deskripsi Kejadian <span class="req">*</span></label>
+            <textarea id="r-desc" name="description" class="textarea" rows="4" required
+              placeholder="Ceritakan apa yang Anda lihat: perilaku penyu, aktivitas di sekitar, cuaca, kedalaman air, dsb. (minimal 20 karakter)"></textarea>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="field">
+            <label>Foto Dokumentasi <span class="hint" style="font-weight:500">(opsional, dianjurkan)</span></label>
+            <div class="file-drop" id="photo-drop">
+              <i class="fa-solid fa-camera"></i>
+              <h4>Klik atau seret foto ke sini</h4>
+              <p>JPG / PNG / WebP • maksimal 5 MB</p>
+              <input type="file" id="photo-input" accept="image/*">
+            </div>
+            <div class="field-error" id="photo-error"></div>
+            <div id="photo-preview" hidden class="mt-8">
+              <div class="preview-img-wrap">
+                <img id="photo-img" alt="Pratinjau foto dokumentasi">
+                <button type="button" class="preview-remove" id="photo-remove" aria-label="Hapus foto">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <span class="text-xs text-muted" id="photo-meta"></span>
+            </div>
+          </div>
+
+          <div class="flex gap-12 mt-24" style="flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary btn-lg" id="btn-submit">
+              <i class="fa-solid fa-paper-plane"></i> Kirim Laporan
+            </button>
+            <button type="button" class="btn btn-outline btn-lg" id="btn-reset">
+              <i class="fa-solid fa-eraser"></i> Bersihkan Formulir
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ============ LAYAR SUKSES ============ -->
+      <div class="card card-pad" id="report-success" hidden style="max-width:760px;margin:0 auto;text-align:center">
+        <div class="empty-state" style="padding:26px 12px 8px">
+          <div class="empty-icon" style="background:var(--pg-success-soft);color:var(--pg-teal-deep)">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h4 style="font-size:21px">Laporan Berhasil Dikirim!</h4>
+          <p style="font-size:14.5px">Simpan nomor laporan berikut untuk memantau status verifikasi.</p>
+          <div style="font-family:var(--pg-font-head);font-weight:800;font-size:30px;color:var(--pg-teal-deep);letter-spacing:.5px" id="success-report-no">—</div>
+        </div>
+
+        <div class="alert alert-info mt-12" style="text-align:left">
+          <i class="fa-solid fa-clock"></i>
+          <span>Laporan berstatus <strong>Menunggu Verifikasi</strong>. Laporan Anda sedang diperiksa operator/admin dan
+          <strong>belum tampil di peta &amp; statistik publik</strong> sebelum berstatus Disetujui. Status dapat dipantau
+          di halaman <a href="my-reports.html">Riwayat Laporan</a>.</span>
+        </div>
+
+        <div class="note-strip mt-16" style="text-align:left" id="success-summary"></div>
+
+        <div class="flex gap-12 mt-24" style="justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="my-reports.html"><i class="fa-solid fa-clipboard-list"></i> Lihat Riwayat Laporan</a>
+          <button type="button" class="btn btn-outline" id="btn-again">
+            <i class="fa-solid fa-plus"></i> Kirim Laporan Lain
+          </button>
+        </div>
+      </div>
+
+      <!-- ============ PANDUAN ============ -->
+      <div class="card card-pad mt-24" style="max-width:760px;margin-left:auto;margin-right:auto">
+        <h3 style="font-size:16.5px;margin-bottom:14px"><i class="fa-solid fa-shield-halved" style="color:var(--pg-teal)"></i> Panduan Pelaporan Aman</h3>
+        <div class="pg-grid-tight">
+          <div class="insight-card">
+            <i class="fa-solid fa-arrows-left-right-to-line"></i>
+            <div><h4>Jaga Jarak</h4><p>Jarak aman minimal 3–5 meter dari penyu. Jangan mengejar atau mengepung.</p></div>
+          </div>
+          <div class="insight-card">
+            <i class="fa-solid fa-hand"></i>
+            <div><h4>Jangan Menyentuh</h4><p>Jangan mengangkat, membalik, ataupun menunggangi penyu — termasuk tukik.</p></div>
+          </div>
+          <div class="insight-card">
+            <i class="fa-solid fa-camera-retro"></i>
+            <div><h4>Foto Tanpa Flash</h4><p>Gunakan cahaya alami; flash &amp; lampu mengganggu penyu bertelur dan tukik.</p></div>
+          </div>
+          <div class="insight-card">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <div><h4>Koordinat Akurat</h4><p>Gunakan tombol "Ambil Lokasi Saya" saat berada di titik kejadian, atau catat koordinat GPS.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/report.js"></script>
+</body>
+</html>

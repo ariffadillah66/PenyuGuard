@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengaturan — Admin PenyuGuard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body class="adm-body" data-auth-area="admin" data-require="admin" data-active="settings">
+<div class="adm-layout" id="adm-layout">
+  <aside class="adm-sidebar" id="pg-sidebar"></aside>
+  <div class="adm-drawer-overlay" id="adm-overlay"></div>
+  <div class="adm-main">
+    <header class="adm-topbar" id="pg-topbar"></header>
+    <main class="adm-content">
+      <div class="adm-page-head">
+        <div>
+          <h1>Pengaturan</h1>
+          <p>Atur identitas situs, kebijakan publikasi, koneksi data, dan penyimpanan demo lokal.</p>
+        </div>
+        <span class="badge badge-info adm-demo-chip"><i class="fa-solid fa-database"></i> Memeriksa penyimpanan…</span>
+      </div>
+
+      <div class="adm-settings-grid">
+        <!-- 1. Pengaturan Umum -->
+        <div class="card">
+          <div class="card-head">
+            <div><h3><i class="fa-solid fa-sliders"></i> Pengaturan Umum</h3><p>Identitas situs &amp; kanal kontak</p></div>
+          </div>
+          <div class="card-pad">
+            <div class="field">
+              <label for="set-site_name">Nama Situs</label>
+              <input class="input" id="set-site_name" placeholder="PenyuGuard">
+            </div>
+            <div class="field">
+              <label for="set-contact">Kontak / Kanal Pelaporan</label>
+              <textarea class="textarea" id="set-contact" style="min-height:88px" placeholder="Contoh: Kanal pelaporan via halaman Laporkan Penyu…"></textarea>
+            </div>
+            <button class="btn btn-primary" id="set-save-umum"><i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan Umum</button>
+          </div>
+        </div>
+
+        <!-- 2. Kebijakan Publikasi -->
+        <div class="card">
+          <div class="card-head">
+            <div><h3><i class="fa-solid fa-scale-balanced"></i> Kebijakan Publikasi</h3><p>Aturan koordinat sensitif &amp; alur persetujuan</p></div>
+          </div>
+          <div class="card-pad">
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" id="set-approximate_sensitive">
+                <span><strong>Aproksimasi lokasi sensitif</strong><br>
+                <span class="text-muted">Tampilkan koordinat lokasi sensitif dalam bentuk diaproksimasi (2 desimal) di peta publik.</span></span>
+              </label>
+            </div>
+            <div class="note-strip warn mb-16" id="approx-warning" style="display:none">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span><strong>Perhatian:</strong> koordinat persis lokasi sensitif akan tampil apa adanya di peta publik. Pastikan keputusan ini sesuai kebijakan konservasi.</span>
+            </div>
+            <div class="field">
+              <label for="set-publication_mode">Mode Publikasi Laporan Disetujui</label>
+              <select class="select" id="set-publication_mode">
+                <option value="manual">Laporan disetujui langsung diteruskan ke data utama</option>
+                <option value="hold">Laporan disetujui ditahan — tidak otomatis diteruskan</option>
+              </select>
+              <span class="hint">Mode ini menentukan perilaku tombol "Setujui &amp; Terbitkan" pada halaman Verifikasi Laporan.</span>
+            </div>
+            <button class="btn btn-primary" id="set-save-kebijakan"><i class="fa-solid fa-floppy-disk"></i> Simpan Kebijakan</button>
+          </div>
+        </div>
+
+        <!-- 3. Integrasi Backend -->
+        <div class="card">
+          <div class="card-head">
+            <div><h3><i class="fa-solid fa-plug"></i> Integrasi Backend</h3><p>Status koneksi Supabase</p></div>
+          </div>
+          <div class="card-pad" id="set-integrasi">
+            <div class="alert alert-info"><i class="fa-solid fa-circle-notch fa-spin"></i><span>Memeriksa konfigurasi…</span></div>
+          </div>
+        </div>
+
+        <!-- 4. Zona Data Demo -->
+        <div class="card">
+          <div class="card-head">
+            <div><h3><i class="fa-solid fa-triangle-exclamation"></i> Reset Demo Lokal</h3><p>Hanya menghapus data demo pada browser ini</p></div>
+          </div>
+          <div class="card-pad">
+            <div class="alert alert-warn mb-16">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span><strong>Reset demo lokal</strong> menghapus data demo dan sesi yang tersimpan pada browser ini. Data pada Supabase tidak dihapus.</span>
+            </div>
+            <button class="btn btn-danger" id="set-reset-demo"><i class="fa-solid fa-arrows-rotate"></i> Reset Data Demonstrasi</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-strip mt-20">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Periksa badge penyimpanan sebelum mengubah data. Catatan demo lokal, laporan masyarakat, observasi eksternal, dan data penelitian harus dibedakan berdasarkan asal serta status verifikasinya.</span>
+      </div>
+    </main>
+    <footer class="adm-footer" id="adm-footer"></footer>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/admin/admin.js"></script>
+</body>
+</html>

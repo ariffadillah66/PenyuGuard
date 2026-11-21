@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya — PenyuGuard</title>
+  <meta name="description" content="Kelola profil, foto, kata sandi, dan pantau aktivitas kontribusi Anda di PenyuGuard.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-require="user" data-active="profil" class="pg-locked">
+<header id="pg-navbar"></header>
+
+<main>
+  <section class="page-hero page-hero-sm">
+    <div class="pg-container">
+      <span class="kicker">Akun Pengguna</span>
+      <h1>Profil Saya</h1>
+      <p>Kelola informasi akun, foto profil, dan keamanan — serta pantau aktivitas kontribusi Anda di PenyuGuard.</p>
+    </div>
+  </section>
+
+  <section class="profile-section">
+    <div class="pg-container">
+      <div class="profile-grid">
+        <!-- ===== Kolom kiri: kartu profil ===== -->
+        <aside>
+          <div class="profile-hero">
+            <div class="ph-band"></div>
+            <div class="ph-body">
+              <div class="ph-avatar-wrap">
+                <span class="avatar avatar-xl" id="ph-avatar">–</span>
+              </div>
+              <button type="button" class="btn btn-ghost btn-sm mt-12" id="ph-photo-btn">
+                <i class="fa-solid fa-camera"></i> Ubah Foto
+              </button>
+              <input type="file" id="ph-photo-input" accept="image/png,image/png,image/webp" hidden>
+
+              <h2 class="ph-name" id="ph-name">Memuat…</h2>
+              <div class="ph-mail" id="ph-mail"></div>
+              <div class="ph-meta" id="ph-meta"></div>
+              <div class="ph-since"><i class="fa-solid fa-calendar-day"></i>Terdaftar: <span id="ph-since">–</span></div>
+
+              <div class="ph-actions">
+                <button type="button" class="btn btn-primary" id="ph-btn-edit">
+                  <i class="fa-solid fa-user-pen"></i> Edit Profil
+                </button>
+                <button type="button" class="btn btn-outline" id="ph-btn-password">
+                  <i class="fa-solid fa-key"></i> Ubah Kata Sandi
+                </button>
+                <button type="button" class="btn btn-outline-danger" id="ph-btn-logout">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ===== Kolom kanan: statistik, aksi cepat, aktivitas ===== -->
+        <div style="display:flex;flex-direction:column;gap:22px;min-width:0;">
+          <!-- Statistik laporan saya -->
+          <div class="card card-pad">
+            <div class="flex-between" style="margin-bottom:14px;">
+              <h3 style="font-size:16.5px;">Statistik Laporan Saya</h3>
+              <span class="badge badge-info" id="profile-storage-mode"><i class="fa-solid fa-database"></i> Memeriksa sumber data…</span>
+            </div>
+            <div class="profile-stats">
+              <div class="ps-item">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <div><div class="ps-value" id="st-total">–</div><div class="ps-label">Total Laporan Saya</div></div>
+              </div>
+              <div class="ps-item tone-teal">
+                <i class="fa-solid fa-circle-check"></i>
+                <div><div class="ps-value" id="st-approved">–</div><div class="ps-label">Disetujui</div></div>
+              </div>
+              <div class="ps-item tone-warn">
+                <i class="fa-solid fa-clock"></i>
+                <div><div class="ps-value" id="st-pending">–</div><div class="ps-label">Menunggu Verifikasi</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aksi cepat -->
+          <div class="card card-pad">
+            <h3 style="font-size:16.5px;margin-bottom:14px;">Aksi Cepat</h3>
+            <div class="quick-grid">
+              <a class="quick-card" href="report.html">
+                <i class="qc-icon fa-solid fa-paper-plane"></i>
+                <strong>Buat Laporan Baru</strong>
+                <small>Dokumentasikan perjumpaan penyu yang Anda temukan.</small>
+              </a>
+              <a class="quick-card" href="my-reports.html">
+                <i class="qc-icon fa-solid fa-clipboard-list"></i>
+                <strong>Riwayat Laporan</strong>
+                <small>Pantau status verifikasi seluruh laporan Anda.</small>
+              </a>
+            </div>
+          </div>
+
+          <!-- Riwayat aktivitas -->
+          <div class="card">
+            <div class="card-head">
+              <div>
+                <h3>Riwayat Aktivitas</h3>
+                <p>15 aktivitas terakhir dari penyimpanan akun aktif</p>
+              </div>
+              <span class="badge"><i class="fa-solid fa-clock-rotate-left"></i> Log</span>
+            </div>
+            <div class="card-pad" id="act-wrap">
+              <div class="act-list" id="act-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akun — PenyuGuard</title>
+  <meta name="description" content="Buat akun PenyuGuard untuk melaporkan perjumpaan penyu di Pulau Rinca dan mendukung konservasi penyu berbasis data.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="login">
+
+<main>
+  <div class="auth-wrap">
+    <!-- ===== Sisi kiri: narasi ===== -->
+    <aside class="auth-side">
+      <img class="auth-side-img" src="../assets/images/hero-turtle.jpg" alt="Penyu hijau berenang di perairan Komodo">
+      <div class="auth-side-overlay"></div>
+      <div class="auth-side-content">
+        <a class="auth-brand" href="../index.html">
+          <img src="../assets/logo/penyuguard-brand.png" alt="Logo PenyuGuard">
+          <img class="pg-wordmark" src="../assets/logo/penyuguard-wordmark.png" alt="">
+        </a>
+        <h2>Satu Akun,<br>Kontribusi Nyata</h2>
+        <p class="auth-tagline">Bergabung bersama masyarakat pesisir &amp; peneliti menjaga penyu Pulau Rinca.</p>
+        <ul class="auth-points">
+          <li>
+            <i class="fa-solid fa-file-circle-check"></i>
+            <span><strong>Laporan terdokumentasi</strong> — setiap kiriman mendapat nomor laporan yang dapat dilacak.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-chart-line"></i>
+            <span><strong>Kontribusi terukur</strong> — pantau statistik &amp; riwayat seluruh laporan Anda.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-users"></i>
+            <span><strong>Bagian dari komunitas</strong> — data warga mendukung keputusan konservasi berbasis bukti.</span>
+          </li>
+        </ul>
+        <figure class="auth-quote">
+          <blockquote>“Laporan masyarakat melengkapi catatan tim lapangan. Petugas memeriksa setiap laporan sebelum datanya ditampilkan untuk umum.”</blockquote>
+          <figcaption>— Prinsip PenyuGuard</figcaption>
+        </figure>
+      </div>
+    </aside>
+
+    <!-- ===== Sisi kanan: formulir ===== -->
+    <div class="auth-panel">
+      <div class="auth-card">
+        <span class="auth-card-brand">
+          <img src="../assets/logo/penyuguard-brand.png" alt=""><img class="pg-wordmark" src="../assets/logo/penyuguard-wordmark.png" alt="">
+        </span>
+        <div class="auth-title">
+          <h1>Buat Akun PenyuGuard</h1>
+        </div>
+        <p class="auth-sub">Buat akun untuk mengirim laporan perjumpaan dan memantau status pemeriksaannya.</p>
+
+        <div class="alert alert-info" style="margin-bottom:20px;">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Akun baru mendapat akses sebagai <strong>pengguna</strong>. Perubahan menjadi operator atau administrator hanya dapat dilakukan oleh administrator.</span>
+        </div>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="reg-name">Nama Lengkap <span class="req">*</span></label>
+            <div class="input-icon">
+              <i class="fa-solid fa-user"></i>
+              <input class="input" type="text" id="reg-name" name="full_name" placeholder="Contoh: Budi Santoso" autocomplete="name" minlength="3" required>
+            </div>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-email">Email <span class="req">*</span></label>
+            <div class="input-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input class="input" type="email" id="reg-email" name="email" placeholder="nama@contoh.email" autocomplete="email" required>
+            </div>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-password">Kata Sandi <span class="req">*</span></label>
+            <div class="input-icon has-toggle">
+              <i class="fa-solid fa-lock"></i>
+              <input class="input" type="password" id="reg-password" name="password" placeholder="Minimal 8 karakter" autocomplete="new-password" minlength="8" required>
+              <button type="button" class="pw-toggle" aria-label="Tampilkan kata sandi"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="pw-meter" id="reg-pw-meter" aria-live="polite">
+              <div class="pw-segs"><span></span><span></span><span></span></div>
+              <span class="pw-label">Kekuatan kata sandi</span>
+            </div>
+            <span class="hint">Minimal 8 karakter, kombinasi huruf dan angka.</span>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="reg-confirm">Konfirmasi Kata Sandi <span class="req">*</span></label>
+            <div class="input-icon has-toggle">
+              <i class="fa-solid fa-lock"></i>
+              <input class="input" type="password" id="reg-confirm" name="confirm" placeholder="Ulangi kata sandi" autocomplete="new-password" minlength="8" required>
+              <button type="button" class="pw-toggle" aria-label="Tampilkan kata sandi"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" id="reg-agree">
+              <span>Saya menyetujui <a href="#" id="reg-policy-link">kebijakan privasi</a> dan penggunaan data untuk keperluan verifikasi laporan konservasi.</span>
+            </label>
+            <span class="field-error"></span>
+          </div>
+
+          <div id="register-error" class="alert alert-danger auth-alert" style="display:none;" role="alert"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="register-submit">
+            <span class="btn-spinner" aria-hidden="true"></span>
+            <span class="btn-label"><i class="fa-solid fa-user-plus"></i> Daftar Sekarang</span>
+          </button>
+        </form>
+
+        <div class="demo-box">
+          <div class="demo-box-title"><i class="fa-solid fa-flask"></i> Mode Demonstrasi</div>
+          <p class="demo-note" style="margin-top:0;">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Untuk mencoba akun demonstrasi, gunakan <strong>budi@contoh.email</strong> / <strong>demo1234</strong> pada halaman <a href="login.html">Masuk</a>. Mode Demonstrasi memakai penyimpanan lokal browser dan tidak ditujukan untuk penggunaan produksi.</span>
+          </p>
+        </div>
+      </div>
+
+      <p class="auth-foot">
+        Sudah punya akun? <a href="login.html">Masuk</a>
+        &nbsp;·&nbsp;
+        <a href="../index.html">Kembali ke Beranda</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/register.js"></script>
+</body>
+</html>

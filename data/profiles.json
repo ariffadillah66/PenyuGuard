@@ -1,0 +1,62 @@
+[
+ {
+  "id": "u_admin",
+  "full_name": "Administrator PenyuGuard",
+  "email": "admin@penyuguard.id",
+  "role": "admin",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2025-08-17T02:00:00Z"
+ },
+ {
+  "id": "u_op",
+  "full_name": "Operator Lapangan Rinca",
+  "email": "operator@penyuguard.id",
+  "role": "operator",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2025-08-20T02:00:00Z"
+ },
+ {
+  "id": "u_budi",
+  "full_name": "Budi Santoso",
+  "email": "budi@contoh.email",
+  "role": "user",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2025-11-02T03:12:00Z"
+ },
+ {
+  "id": "u_sari",
+  "full_name": "Sari Melati",
+  "email": "sari@contoh.email",
+  "role": "user",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2026-01-11T07:40:00Z"
+ },
+ {
+  "id": "u_ahmad",
+  "full_name": "Ahmad Fauzi",
+  "email": "ahmad@contoh.email",
+  "role": "user",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2026-03-05T02:22:00Z"
+ },
+ {
+  "id": "u_maria",
+  "full_name": "Maria Kette",
+  "email": "maria@contoh.email",
+  "role": "user",
+  "status": "active",
+  "phone": "",
+  "avatar": "",
+  "created_at": "2026-04-21T09:05:00Z"
+ }
+]

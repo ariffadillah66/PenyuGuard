@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk — PenyuGuard</title>
+  <meta name="description" content="Masuk ke akun PenyuGuard untuk melaporkan perjumpaan penyu, memantau status verifikasi laporan, dan mendukung konservasi berbasis data di Pulau Rinca.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="login">
+
+<main>
+  <div class="auth-wrap">
+    <!-- ===== Sisi kiri: narasi ===== -->
+    <aside class="auth-side">
+      <img class="auth-side-img" src="../assets/images/hatchling.jpg" alt="Anak penyu merangkak menuju laut">
+      <div class="auth-side-overlay"></div>
+      <div class="auth-side-content">
+        <a class="auth-brand" href="../index.html">
+          <img src="../assets/logo/penyuguard-brand.png" alt="Logo PenyuGuard">
+          <img class="pg-wordmark" src="../assets/logo/penyuguard-wordmark.png" alt="">
+        </a>
+        <h2>Bersama Menjaga<br>Penyu Pulau Rinca</h2>
+        <p class="auth-tagline">Kenali, Pantau, dan Lindungi Penyu Laut.</p>
+        <ul class="auth-points">
+          <li>
+            <i class="fa-solid fa-paper-plane"></i>
+            <span><strong>Laporkan perjumpaan penyu</strong> — dokumentasikan temuan Anda langsung dari lapangan dengan mudah.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span><strong>Pantau status verifikasi</strong> — ikuti proses pemeriksaan laporan oleh operator konservasi.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-chart-line"></i>
+            <span><strong>Dukung konservasi berbasis data</strong> — kontribusi Anda terhubung dengan analitik PenyuGuard.</span>
+          </li>
+        </ul>
+        <figure class="auth-quote">
+          <blockquote>“Catat waktu, lokasi, dan kondisi penyu saat melapor. Informasi ini membantu petugas memeriksa kejadian.”</blockquote>
+          <figcaption>— Tim PenyuGuard, Pulau Rinca</figcaption>
+        </figure>
+      </div>
+    </aside>
+
+    <!-- ===== Sisi kanan: formulir ===== -->
+    <div class="auth-panel">
+      <div class="auth-card">
+        <span class="auth-card-brand">
+          <img src="../assets/logo/penyuguard-brand.png" alt=""><img class="pg-wordmark" src="../assets/logo/penyuguard-wordmark.png" alt="">
+        </span>
+        <div class="auth-title">
+          <h1>Selamat Datang Kembali di PenyuGuard</h1>
+        </div>
+        <p class="auth-sub">Masuk untuk melanjutkan laporan dan aktivitas konservasi Anda di Pulau Rinca.</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email <span class="req">*</span></label>
+            <div class="input-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input class="input" type="email" id="login-email" name="email" placeholder="nama@gmail.com" autocomplete="email" required>
+            </div>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field">
+          <label for="login-password">Kata Sandi <span class="req">*</span></label>
+            <div class="input-icon has-toggle">
+              <i class="fa-solid fa-key"></i>
+              <input class="input" type="password" id="login-password" name="password" placeholder="Masukkan kata sandi" autocomplete="current-password" minlength="8" required>
+              <button type="button" class="pw-toggle" aria-label="Tampilkan kata sandi"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="flex-between" style="margin:2px 0 18px;">
+            <label class="checkbox" style="font-size:13px;">
+              <input type="checkbox" id="login-remember" checked> Ingat saya
+            </label>
+            <a href="forgot-password.html" style="font-size:13px;font-weight:600;">Lupa kata sandi?</a>
+          </div>
+
+          <div id="login-error" class="alert alert-danger auth-alert" style="display:none;" role="alert"></div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="login-submit">
+            <span class="btn-spinner" aria-hidden="true"></span>
+            <span class="btn-label"><i class="fa-solid fa-right-to-bracket"></i> Masuk</span>
+          </button>
+        </form>
+
+        <!-- Akun uji mode demonstrasi -->
+        <div class="demo-box">
+          <div class="demo-box-title"><i class="fa-solid fa-flask"></i> Mode Demonstrasi — akun uji tersimpan di browser</div>
+          <div class="demo-accs">
+            <button type="button" class="demo-acc" data-email="admin@penyuguard.id" data-password="demo1234">
+              <span class="da-role role-admin">Administrator</span>
+              <span class="da-mail"><strong>admin@penyuguard.id</strong><small>demo1234</small></span>
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+            <button type="button" class="demo-acc" data-email="operator@penyuguard.id" data-password="demo1234">
+              <span class="da-role role-operator">Operator</span>
+              <span class="da-mail"><strong>operator@penyuguard.id</strong><small>demo1234</small></span>
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+            <button type="button" class="demo-acc" data-email="budi@contoh.email" data-password="demo1234">
+              <span class="da-role">Pengguna</span>
+              <span class="da-mail"><strong>budi@contoh.email</strong><small>demo1234</small></span>
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+          </div>
+          <p class="demo-note"><i class="fa-solid fa-circle-info"></i> Pilih akun untuk mengisi formulir; Anda tetap perlu menekan Masuk. Mode Demonstrasi memakai penyimpanan lokal browser dan tidak ditujukan untuk penggunaan produksi.</p>
+        </div>
+      </div>
+
+      <p class="auth-foot">
+        Belum punya akun? <a href="register.html">Daftar</a>
+        &nbsp;·&nbsp;
+        <a href="../index.html">Kembali ke Beranda</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

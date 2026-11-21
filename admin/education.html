@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konten Edukasi — Admin PenyuGuard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body class="adm-body" data-auth-area="admin" data-require="staff" data-active="education">
+<div class="adm-layout" id="adm-layout">
+  <aside class="adm-sidebar" id="pg-sidebar"></aside>
+  <div class="adm-drawer-overlay" id="adm-overlay"></div>
+  <div class="adm-main">
+    <header class="adm-topbar" id="pg-topbar"></header>
+    <main class="adm-content">
+      <div class="adm-page-head">
+        <div>
+          <h1>Manajemen Konten Edukasi</h1>
+          <p>Kelola artikel edukasi &amp; konservasi serta katalog spesies penyu yang tampil di halaman publik.</p>
+        </div>
+        <span class="badge badge-info"><i class="fa-solid fa-book-open"></i> Konten Dikelola Admin</span>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="articles"><i class="fa-solid fa-newspaper"></i> Artikel Edukasi</button>
+        <button class="tab-btn" data-tab="species"><i class="fa-solid fa-list-check"></i> Katalog Spesies</button>
+      </div>
+
+      <div class="tab-pane active" id="pane-articles">
+        <div id="tbl-articles"></div>
+      </div>
+      <div class="tab-pane" id="pane-species">
+        <div id="tbl-species"></div>
+      </div>
+    </main>
+    <footer class="adm-footer" id="adm-footer"></footer>
+  </div>
+</div>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/admin/admin.js"></script>
+<script src="../js/admin/data-management.js"></script>
+</body>
+</html>

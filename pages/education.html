@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edukasi &amp; Konservasi Penyu — PenyuGuard</title>
+  <meta name="description" content="Materi edukasi konservasi penyu: pengenalan spesies, habitat, status konservasi, ancaman, panduan lapangan, dan pelaporan resmi.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="edukasi">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span class="badge"><i class="fa-solid fa-book-open"></i> Edukasi &amp; Konservasi</span>
+      <h1>Kenali, Pahami, Lindungi</h1>
+      <p>Katalog Penyu Hijau dan Penyu Sisik dilengkapi materi habitat, ancaman, perlindungan, peran ekosistem,
+      panduan perjumpaan aman, dan pelaporan kepada petugas berwenang.</p>
+      <div class="mt-16" style="display:flex;flex-wrap:wrap;gap:8px">
+        <a class="chip" href="#ed-spesies">Spesies</a>
+        <a class="chip" href="#ed-habitat">Habitat</a>
+        <a class="chip" href="#ed-konservasi">Status Konservasi</a>
+        <a class="chip" href="#ed-ancaman">Ancaman</a>
+        <a class="chip" href="#ed-ekosistem">Peran Ekosistem</a>
+        <a class="chip" href="#ed-panduan">Panduan Lapangan</a>
+        <a class="chip" href="#ed-pelaporan">Pelaporan Resmi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PENGENALAN SPESIES ============ -->
+  <section class="section" id="ed-spesies" style="padding-top:44px">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Pengenalan Spesies</span>
+        <h2>Katalog Spesies Penyu</h2>
+        <p>Dua spesies fokus konservasi di perairan Komodo: Penyu Hijau (<em>Chelonia mydas</em>) dan Penyu Sisik (<em>Eretmochelys imbricata</em>).</p>
+      </div>
+      <div class="pg-grid" id="species-grid"></div>
+      <div class="note-strip mt-20">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Kartu spesies menjelaskan ciri, habitat, status konservasi, dan dokumentasi lokal. Catatan perjumpaan
+        tetap dibedakan menurut sumber dan kualitas identifikasinya. <span id="education-species-source" hidden></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HABITAT ============ -->
+  <section class="section section-alt" id="ed-habitat">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Habitat Penyu</span>
+        <h2>Padang Lamun &amp; Terumbu Karang</h2>
+        <p>Dua ekosistem kunci tempat penyu mencari makan dan tumbuh dewasa.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3 style="display:flex;align-items:center;gap:10px"><i class="fa-solid fa-seedling" style="color:var(--pg-teal)"></i> Padang Lamun</h3>
+          <p class="text-muted" style="margin-top:8px;font-size:14.5px">Padang lamun adalah "kebun makan" utama penyu
+          hijau dewasa yang bersifat herbivora. Penyu merumput secara terus-menerus sehingga lamun tetap pendek dan
+          produktif. Padang lamun yang sehat menopang ikan-ikan ekonomis penting, menyimpan karbon biru, serta
+          menstabilkan sedimen dasar perairan dangkal seperti di Teluk Wainilu dan perairan dangkal sekitar
+          Taman Nasional Komodo.</p>
+          <h3 class="mt-16" style="display:flex;align-items:center;gap:10px"><i class="fa-solid fa-water" style="color:var(--pg-ocean)"></i> Terumbu Karang</h3>
+          <p class="text-muted" style="margin-top:8px;font-size:14.5px">Terumbu karang menjadi habitat penyu sisik —
+          perenang tangkas yang mencari spons di celah karang. Struktur terumbu menyediakan
+          tempat berlindung dan area pembersihan, tempat ikan pembersih memakan ektoparasit dari
+          tubuh penyu, serta mendukung rantai makanan yang seimbang. Menjaga terumbu berarti menjaga habitat penyu
+          sekaligus mata pencaharian masyarakat pesisir.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <img src="../assets/images/seagrass.jpg" alt="Padang lamun di perairan dangkal" style="width:100%;height:215px;object-fit:cover;border-radius:14px;box-shadow:var(--pg-shadow-md)" loading="lazy">
+          <img src="../assets/images/coral-reef.avif" alt="Terumbu karang tropis" style="width:100%;height:215px;object-fit:cover;border-radius:14px;box-shadow:var(--pg-shadow-md)" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATUS KONSERVASI ============ -->
+  <section class="section" id="ed-konservasi">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Status Konservasi</span>
+        <h2>Perlindungan Hukum Penyu Laut</h2>
+        <p>Seluruh spesies penyu laut berstatus terancam dan dilindungi oleh instrumen internasional maupun nasional.</p>
+      </div>
+      <div class="table-card" style="border-radius:var(--pg-radius)">
+        <div class="table-head">
+          <h3>Ringkasan Status Perlindungan</h3>
+          <span class="badge badge-info"><i class="fa-solid fa-list-check"></i> Data simulasi demonstrasi — rujuk sumber resmi</span>
+        </div>
+        <div class="table-wrap">
+          <table class="pg-table">
+            <thead>
+              <tr>
+                <th>Spesies</th>
+                <th>IUCN</th>
+                <th>CITES</th>
+                <th>Perlindungan Indonesia</th>
+              </tr>
+            </thead>
+            <tbody id="conservation-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANCAMAN ============ -->
+  <section class="section section-alt" id="ed-ancaman">
+    <div class="pg-container">
+      <div class="two-col mb-24">
+        <div>
+          <span class="kicker" style="color:var(--pg-teal-deep);font-weight:700;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase">Ancaman</span>
+          <h2 style="font-size:28px;margin:10px 0 12px">Tekanan terhadap Populasi Penyu</h2>
+          <p class="text-muted" style="font-size:14.5px">Populasi penyu laut menghadapi berbagai tekanan — dari
+          aktivitas manusia hingga perubahan lingkungan global. Memahami ancaman ini menjadi dasar mitigasi yang
+          tepat sasaran: data interaksi yang terkumpul pada PenyuGuard membantu memetakan di mana tekanan paling
+          sering terjadi sehingga upaya perlindungan dapat diarahkan secara efektif bersama masyarakat pesisir
+          dan pengelola taman nasional.</p>
+        </div>
+        <img src="../assets/images/threats.jpg" alt="Ancaman terhadap penyu di wilayah pesisir" style="width:100%;height:300px;object-fit:cover;border-radius:var(--pg-radius-lg);box-shadow:var(--pg-shadow-md)" loading="lazy">
+      </div>
+      <div class="pg-grid" id="threats-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PERAN EKOSISTEM ============ -->
+  <section class="section" id="ed-ekosistem">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Peran Ekosistem</span>
+        <h2>Peran Penyu dalam Ekosistem Laut</h2>
+        <p>Penyu bukan sekadar penghuni laut — mereka adalah insinyur ekosistem yang menjaga keseimbangan laut dan pantai.</p>
+      </div>
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="chart-card insight-card">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+              <h4>Menjaga Kesehatan Padang Lamun</h4>
+              <p>Perumputan penyu hijau menjaga lamun tetap pendek dan produktif — padang lamun sehat menjadi tempat
+              bernaung ikan ekonomis penting dan menyimpan karbon biru dalam jumlah besar.</p>
+            </div>
+          </div>
+          <div class="chart-card insight-card">
+            <i class="fa-solid fa-cubes"></i>
+            <div>
+              <h4>Mengendalikan Spons di Terumbu</h4>
+              <p>Penyu sisik memangsa spons sehingga mencegah spons menutupi dan mengalahkan karang pembangun terumbu —
+              sebuah layanan ekologis yang menjaga struktur terumbu tetap beragam.</p>
+            </div>
+          </div>
+          <div class="chart-card insight-card">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <div>
+              <h4>Transfer Nutrien Laut–Pantai</h4>
+              <p>Saat bertelur, penyu memindahkan nutrien laut ke darat; sisa sarang dan tukik menjadi sumber makanan
+              bagi predator pantai — menghubungkan dua ekosistem dalam satu rantai kehidupan.</p>
+            </div>
+          </div>
+        </div>
+        <img src="../assets/images/hatchling.jpg" alt="Tukik menuju laut" style="width:100%;height:420px;object-fit:cover;border-radius:var(--pg-radius-lg);box-shadow:var(--pg-shadow-md)" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PANDUAN LAPANGAN ============ -->
+  <section class="section section-alt" id="ed-panduan">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Panduan Lapangan</span>
+        <h2>Apa yang Harus Dilakukan?</h2>
+        <p>Langkah aman saat menemukan penyu di alam maupun saat penyu tertangkap tidak sengaja pada alat tangkap.</p>
+      </div>
+      <div class="two-col-eq">
+        <div class="card card-pad">
+          <h3 style="display:flex;align-items:center;gap:10px;font-size:17px">
+            <span class="stat-icon tone-teal" style="width:42px;height:42px;font-size:17px;flex-basis:42px"><i class="fa-solid fa-turtle"></i></span>
+            Ketika Menemukan Penyu
+          </h3>
+          <ol style="margin-top:14px;padding-left:22px;list-style-position:outside;display:flex;flex-direction:column;gap:9px;font-size:13.9px;line-height:1.65">
+            <li>Jaga jarak minimal 3–5 meter — jangan mengejar atau menyentuh penyu.</li>
+            <li>Jangan menggunakan lampu atau flash kamera pada malam hari; cahaya mengganggu penyu bertelur dan tukik.</li>
+            <li>Jangan menunggangi, mengangkat, atau membalik posisi penyu.</li>
+            <li>Biarkan tukik berjalan sendiri menuju laut; jangan dibantu dilempar ke air.</li>
+            <li>Jauhkan anjing dan burung dari sarang atau tukik.</li>
+            <li>Catat waktu, lokasi (koordinat GPS bila memungkinkan), kondisi penyu, dan perilaku yang teramati.</li>
+            <li>Laporkan perjumpaan melalui fitur <em>Laporkan Penyu</em> di PenyuGuard atau langsung kepada petugas taman nasional.</li>
+            <li>Bila penyu terlihat terluka, terdampar, atau terperangkap — jangan menanganinya sendirian; hubungi petugas berwenang segera.</li>
+          </ol>
+        </div>
+        <div class="card card-pad">
+          <h3 style="display:flex;align-items:center;gap:10px;font-size:17px">
+            <span class="stat-icon tone-navy" style="width:42px;height:42px;font-size:17px;flex-basis:42px"><i class="fa-solid fa-ship"></i></span>
+            Penanganan Awal Penyu Tertangkap Tidak Sengaja (Bycatch)
+          </h3>
+          <ul style="margin-top:14px;padding-left:22px;list-style-position:outside;display:flex;flex-direction:column;gap:9px;font-size:13.9px;line-height:1.65">
+            <li>Bawa penyu ke atas perahu dengan hati-hati — pegang pada sisi depan karapas, jangan pada ekor atau sirip.</li>
+            <li>Letakkan penyu di tempat teduh dan rata; <strong>jangan membalik penyu terlentang</strong>.</li>
+            <li>Lepaskan kait atau jaring dengan perlahan; bila tersangkut di mulut atau tertelan, jangan dipaksa — serahkan pada petugas.</li>
+            <li>Basahi kulit penyu secara berkala dengan air laut (hindari mata dan lubang hidung); jangan menuangkan air ke mulut.</li>
+            <li>Bila penyu lemas, letakkan bagian belakang karapas sedikit lebih tinggi agar saluran udaranya bekerja normal.</li>
+            <li>Sebelum dilepas, pastikan penyu aktif dan perahu berada jauh dari jaring; lepaskan menghadap ke laut lepas.</li>
+            <li>Catat jenis alat tangkap, kondisi penyu, dan lokasi kejadian, kemudian laporkan melalui PenyuGuard.</li>
+            <li>Bila penanganan sulit dilakukan, serahkan kepada petugas Balai Taman Nasional Komodo atau BKSDA setempat.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PELAPORAN RESMI ============ -->
+  <section class="section" id="ed-pelaporan">
+    <div class="pg-container">
+      <div class="card card-pad" style="background:var(--pg-grad-navy);color:#fff;border:none;overflow:hidden;position:relative">
+        <div class="two-col" style="align-items:center;position:relative;z-index:1">
+          <div>
+            <span class="badge" style="background:rgba(255,255,255,.14);color:#fff"><i class="fa-solid fa-bullhorn"></i> Pelaporan kepada Petugas Berwenang</span>
+            <h2 style="color:#fff;font-size:27px;margin:14px 0 10px">Temukan Penyu? Laporkan Sekarang.</h2>
+            <p style="color:rgba(255,255,255,.82);font-size:14.5px">Setiap perjumpaan, bycatch, atau penyu terdampar
+            sebaiknya segera diketahui petugas. Koordinasi institusi di kawasan Taman Nasional Komodo:</p>
+            <ul style="list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <li style="display:flex;gap:11px;align-items:flex-start"><i class="fa-solid fa-building-columns" style="color:var(--pg-teal);margin-top:4px"></i>
+                <span><strong style="color:#fff">Balai Taman Nasional Komodo</strong> — pengelola kawasan taman nasional.</span></li>
+              <li style="display:flex;gap:11px;align-items:flex-start"><i class="fa-solid fa-building-columns" style="color:var(--pg-teal);margin-top:4px"></i>
+                <span><strong style="color:#fff">BKSDA NTT</strong> — Balai Konservasi Sumber Daya Alam Nusa Tenggara Timur.</span></li>
+              <li style="display:flex;gap:11px;align-items:flex-start"><i class="fa-solid fa-building-columns" style="color:var(--pg-teal);margin-top:4px"></i>
+                <span><strong style="color:#fff">Polisi Kehutanan (Polhut)</strong> — penegakan hukum di kawasan konservasi.</span></li>
+            </ul>
+            <div class="note-strip mt-16" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.85)">
+              <i class="fa-solid fa-circle-info" style="color:#7BE0C8"></i>
+              <span>Nomor kontak resmi tidak dicantumkan di sini karena dapat berubah — rujuk kanal resmi institusi.
+              Gunakan fitur <strong>Laporkan Penyu</strong> untuk pencatatan terstruktur yang terverifikasi.</span>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <i class="fa-solid fa-turtle" style="font-size:64px;color:rgba(255,255,255,.35)"></i>
+            <div class="mt-16">
+              <a class="btn btn-light btn-lg" href="report.html"><i class="fa-solid fa-paper-plane"></i> Laporkan Sekarang</a>
+            </div>
+            <p class="mt-12" style="color:rgba(255,255,255,.65);font-size:12.8px">Laporan diverifikasi operator/admin
+            sebelum dipublikasikan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARTIKEL ============ -->
+  <section class="section section-alt" id="ed-artikel">
+    <div class="pg-container">
+      <div class="section-head">
+        <span class="kicker">Artikel &amp; Materi Edukasi</span>
+        <h2>Perkaya Wawasan Konservasi</h2>
+        <p>Artikel dikelola administrator dan diperbarui berkala sebagai bahan edukasi masyarakat pesisir dan wisatawan.</p>
+      </div>
+      <div class="pg-grid" id="articles-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/education.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis AI Penyu — PenyuGuard</title>
+  <meta name="description" content="Identifikasi spesies penyu otomatis berbasis YOLOv8 serta estimasi panjang karapas dan usia pertumbuhan (ArUco Marker &amp; VBGF) pada platform PenyuGuard.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="ai">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span id="ai-status" class="badge badge-success badge-lg"><i class="fa-solid fa-circle-check"></i> Layanan AI Aktif</span>      <h1>Analisis Foto Penyu</h1>
+      <p>Unggah foto penyu untuk identifikasi spesies otomatis menggunakan YOLOv8. Jika foto dilengkapi ArUco Marker sebagai acuan skala, sistem juga menghitung estimasi panjang karapas, fase hidup, dan perkiraan usia pertumbuhan berdasarkan kurva Von Bertalanffy (VBGF).</p>
+      <div class="mt-16" style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="chip" href="education.html#ed-spesies">Penyu Hijau · <em>Chelonia mydas</em></a>
+        <a class="chip" href="education.html#ed-spesies">Penyu Sisik · <em>Eretmochelys imbricata</em></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:44px">
+    <div class="pg-container">
+
+      <div class="two-col mb-24">
+        <!-- ============ KARTU UPLOAD (STYLE PENYUGUARD) ============ -->
+        <div class="chart-card">
+          <h3><i class="fa-solid fa-file-arrow-up" style="color:var(--pg-teal)"></i> Input Foto Penyu</h3>
+          <p class="chart-sub">Unggah berkas foto, ambil langsung dari kamera, atau tempel gambar (Ctrl+V) untuk dianalisis.</p>
+
+          <!-- Pilihan Mode Input: Upload / Kamera / Paste -->
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+            <button type="button" class="chip active" id="mode-upload-btn"><i class="fa-solid fa-upload"></i> Pilih Berkas</button>
+            <button type="button" class="chip" id="mode-webcam-btn"><i class="fa-solid fa-camera"></i> Kamera</button>
+            <button type="button" class="chip" id="mode-paste-btn"><i class="fa-solid fa-paste"></i> Tempel Gambar (Ctrl+V)</button>
+          </div>
+
+          <!-- 1. Area Pilih Berkas (Otomatis tertutup saat foto terisi / buka webcam / buka paste) -->
+          <div class="file-drop" id="file-drop">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h4>Pilih foto atau seret berkas ke area ini</h4>
+            <p>JPG / PNG / WebP • maksimal 8 MB</p>
+            <input type="file" id="file-input" accept="image/*">
+          </div>
+
+          <!-- 2. Area Kamera (Terbuka hanya saat mode Kamera diklik) -->
+          <div id="webcam-wrap" hidden style="text-align:center;background:#0f172a;padding:14px;border-radius:14px">
+            <video id="webcam-video" autoplay playsinline style="width:100%;max-height:320px;border-radius:10px;background:#000"></video>
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+              <button type="button" class="btn btn-teal btn-sm" id="btn-capture-webcam"><i class="fa-solid fa-camera"></i> Ambil Foto</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="btn-close-webcam"><i class="fa-solid fa-xmark"></i> Tutup Kamera</button>
+            </div>
+          </div>
+
+          <!-- 3. Area Paste Clipboard (Terbuka saat mode Paste diklik & otomatis tertutup setelah gambar ditempel) -->
+          <div id="paste-wrap" hidden class="file-drop" style="cursor:default">
+            <i class="fa-solid fa-paste"></i>
+            <h4>Tekan <kbd style="background:#e2e8f0;padding:2px 7px;border-radius:5px;font-size:13px">Ctrl + V</kbd> di halaman ini</h4>
+            <p style="margin-bottom:12px">Salin gambar penyu dari peramban atau folder, lalu tempelkan di sini.</p>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-trigger-paste">
+              <i class="fa-solid fa-clipboard-check"></i> Tempel dari Clipboard
+            </button>
+          </div>
+
+          <div class="field-error" id="file-error" style="margin-top:8px"></div>
+
+          <!-- 4. Pratinjau Foto (Muncul menggantikan area input setelah foto dipilih) -->
+          <div id="preview-wrap" hidden class="mt-8">
+            <div class="preview-img-wrap" id="preview-box">
+              <img id="preview-img" alt="Pratinjau foto penyu">
+              <button type="button" class="preview-remove" id="preview-remove" aria-label="Hapus foto">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div class="flex-between mt-12" style="gap:8px;flex-wrap:wrap">
+              <span class="text-sm text-muted" id="file-meta" style="min-width:0;overflow-wrap:anywhere"></span>
+              <div style="display:flex;gap:8px;flex-shrink:0">
+                <button type="button" class="btn btn-outline btn-sm" id="btn-change-file">
+                  <i class="fa-solid fa-rotate"></i> Ganti Foto
+                </button>
+                <button type="button" class="btn btn-ghost btn-sm" id="remove-photo">
+                  <i class="fa-solid fa-trash"></i> Hapus Foto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Ukuran ArUco Marker -->
+          <div class="mt-16">
+            <label for="marker-size-input" style="display:block;font-size:13.5px;font-weight:600;color:var(--pg-navy);margin-bottom:6px">
+              Ukuran Fisik Sisi ArUco Marker (cm) <span class="text-muted" style="font-weight:400">(opsional untuk hitung panjang & usia)</span>
+            </label>
+            <input type="number" id="marker-size-input" class="input" value="10" min="1" max="200" step="0.5" placeholder="Contoh: 10">
+          </div>
+
+          <!-- Pipeline animasi -->
+          <div id="pipeline" hidden class="mt-16">
+            <div class="note-strip" style="border-style:solid">
+              <i class="fa-solid fa-circle-notch fa-spin"></i>
+              <span>Memproses citra pada server AI Railway…</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-lg btn-block mt-16" id="btn-analyze" disabled>
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Analisis Gambar
+          </button>
+        </div>
+
+        <!-- ============ KARTU HASIL (STYLE PENYUGUARD) ============ -->
+        <div class="chart-card" id="result-card">
+          <h3><i class="fa-solid fa-square-poll-vertical" style="color:var(--pg-ocean)"></i> Hasil Analisis</h3>
+          <p class="chart-sub">Hasil deteksi spesies (YOLOv8), kalibrasi skala ArUco Marker, serta estimasi panjang karapas dan usia (VBGF).</p>
+
+          <div id="result-empty">
+            <div class="empty-state" style="padding:34px 10px">
+              <div class="empty-icon"><i class="fa-solid fa-image"></i></div>
+              <h4 style="font-size:16px">Belum ada hasil analisis</h4>
+              <p style="font-size:13.5px">Unggah foto penyu, ambil lewat webcam, atau tempel gambar untuk memulai analisis.</p>
+            </div>
+          </div>
+
+          <div id="result-body" hidden>
+            <div class="badge badge-success badge-lg" id="analysis-result-status" role="status">Terdeteksi</div>
+
+            <!-- Gambar Output Deteksi -->
+            <div id="overlay-wrap" class="mvp-overlay mt-16" hidden>
+              <strong>Hasil Deteksi & Kalibrasi Marker</strong>
+              <img id="overlay-img" alt="Hasil deteksi bounding box penyu">
+            </div>
+
+            <div class="mini-stats mt-16">
+              <div class="mini-stat">
+                <span class="ms-label">Prediksi Spesies</span>
+                <span class="ms-value" id="species-value" style="font-size:22px;color:var(--pg-teal-deep)">–</span>
+                <span class="ms-label" id="species-scientific" style="font-style:italic">–</span>
+              </div>
+              <div class="mini-stat">
+                <span class="ms-label">Tingkat Keyakinan</span>
+                <span class="mt-8" style="display:block"><span class="badge badge-info badge-lg" id="confidence-value">–</span></span>
+              </div>
+            </div>
+
+            <div class="mt-16" style="display:flex;flex-direction:column;gap:10px;font-size:13.8px">
+              <div class="flex-between"><strong style="color:var(--pg-navy)">Kalibrasi ArUco Marker</strong><span id="aruco-status-text" style="text-align:right">–</span></div>
+              <div class="flex-between"><strong style="color:var(--pg-navy)">Estimasi Panjang Karapas</strong><span id="scl-value" style="text-align:right;font-weight:600">–</span></div>
+              <div class="flex-between"><strong style="color:var(--pg-navy)">Estimasi Usia (VBGF)</strong><span id="age-value" style="text-align:right;font-weight:600">–</span></div>
+              <div class="flex-between"><strong style="color:var(--pg-navy)">Fase Hidup</strong><span id="stage-value" style="text-align:right">–</span></div>
+            </div>
+
+            <div class="note-strip mt-16">
+              <i class="fa-solid fa-circle-info"></i>
+              <span id="ai-limitation">Sertakan marker ArUco di samping penyu untuk menghitung panjang karapas dan usia pertumbuhan.</span>
+            </div>
+
+            <button type="button" class="btn btn-teal btn-block mt-16" id="btn-save">
+              <i class="fa-solid fa-floppy-disk"></i> Simpan Hasil ke Riwayat
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ RIWAYAT ANALISIS ============ -->
+      <div class="chart-card mb-20">
+        <h3><i class="fa-solid fa-clock-rotate-left" style="color:var(--pg-teal)"></i> Riwayat Analisis</h3>
+        <p class="chart-sub">Daftar hasil identifikasi spesies beserta estimasi panjang karapas dan usia yang tersimpan pada akun Anda.</p>
+        <div id="history-wrap"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/ai-analysis.js"></script>
+</body>
+</html>
+

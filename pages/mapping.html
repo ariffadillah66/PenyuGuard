@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta Persebaran Penyu — PenyuGuard</title>
+  <meta name="description" content="Peta publik PenyuGuard: titik perjumpaan penyu dan titik rekomendasi budidaya di sekitar Rinca.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/mapping.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-active="mapping">
+<header id="pg-navbar"></header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="pg-container">
+      <span class="badge"><i class="fa-solid fa-map-location-dot"></i> Peta Persebaran</span>
+      <h1>Peta Persebaran Penyu</h1>
+      <p>Telusuri catatan perjumpaan penyu dan lokasi budidaya. Jendela informasi menampilkan asal observasi serta parameter oseanografi pada grid terdekat.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:44px">
+    <div class="pg-container">
+
+      <!-- ============ FILTER BAR ============ -->
+      <div class="filter-bar mb-16" id="map-filters">
+        <div class="f-group">
+          <label for="f-from">Tanggal Dari</label>
+          <input type="date" id="f-from" class="input">
+        </div>
+        <div class="f-group">
+          <label for="f-to">Tanggal Sampai</label>
+          <input type="date" id="f-to" class="input">
+        </div>
+        <div class="f-group">
+          <label for="f-species">Spesies</label>
+          <select id="f-species" class="select">
+            <option value="">Semua Spesies</option>
+          </select>
+        </div>
+        <div class="f-group f-grow">
+          <label for="f-type">Jenis Kejadian</label>
+          <select id="f-type" class="select">
+            <option value="">Semua Jenis</option>
+            <option value="sightings">Perjumpaan Penyu</option>
+            <option value="recommendations">Titik Rekomendasi Budidaya</option>
+            <option value="zones">Zona Potensial Budidaya</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-outline" id="f-reset">
+          <i class="fa-solid fa-rotate-left"></i> Atur Ulang Filter
+        </button>
+      </div>
+
+      <!-- ============ MAP SHELL ============ -->
+      <div class="map-shell">
+        <div id="map" class="pg-map"></div>
+
+        <div class="map-search-wrap">
+          <div class="map-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="map-search-input" placeholder="Cari lokasi (mis. Loh Wenci)" aria-label="Cari lokasi pada peta" autocomplete="off">
+          </div>
+          <div class="map-search-results" id="map-search-results"></div>
+        </div>
+
+        <div class="map-layers-panel" id="layers-panel">
+          <div class="mlp-head" id="layers-toggle">
+            <h4><i class="fa-solid fa-layer-group"></i> Layer Peta</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="mlp-body">
+            <label class="mlp-item">
+              <input type="checkbox" data-layer="sightings" checked>
+              <span>
+                <span class="mlp-label"><span class="mlp-dot" style="background:#8995B8"></span>Catatan Perjumpaan Penyu</span>
+                <span class="mlp-count" id="cnt-sightings">–</span>
+              </span>
+            </label>
+            <label class="mlp-item"><input type="checkbox" data-layer="import-recommendations" checked><span><span class="mlp-label"><span class="mlp-dot" style="background:#E76F51"></span>Titik Budidaya (indikatif)</span><span class="mlp-count" id="cnt-import-recommendations">Memuat…</span></span></label>
+            <label class="mlp-item"><input type="checkbox" data-layer="zones" checked><span><span class="mlp-label"><span class="mlp-dot" style="background:#9A7BC7"></span>Zona Budidaya (indikatif)</span><span class="mlp-count" id="cnt-zones">Memuat…</span></span></label>
+          </div>
+        </div>
+
+        <details class="map-legend map-legend-collapsible" aria-label="Legenda simbol peta">
+          <summary><span class="legend-summary-title">Legenda Peta</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+          <div class="map-legend-content">
+          <div class="legend-group-title">Catatan perjumpaan</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#0000FF"></span> Penyu Hijau</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#D9FF47"></span> Penyu Sisik</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#7F8CFF"></span> Penyu Lekang</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#B9C4FF"></span> Penyu Tempayan</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#5969D8"></span> Penyu Belimbing</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#8995B8"></span> Tidak teridentifikasi</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#9DB2BC"></span> Spesies lain/tidak diketahui</div>
+          <div class="legend-group-title">Budidaya indikatif</div>
+          <div class="lg-row"><span class="lg-swatch round" style="background:#E76F51;border-color:#B84B39"></span> Titik rekomendasi</div>
+          <div class="lg-row"><span class="lg-swatch" style="background:rgba(154,123,199,.35);border:1px solid #694E9B"></span> Zona potensial</div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ============ CATATAN ============ -->
+      <div class="mt-16" style="display:flex;flex-direction:column;gap:10px">
+        <div class="note-strip">
+          <i class="fa-solid fa-database"></i>
+          <span id="map-source-note">Memeriksa sumber data peta…</span>
+        </div>
+        <div class="note-strip warn">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Titik dan zona budidaya merupakan simulasi demonstrasi dengan klasifikasi spasial indikatif, bukan studi kelayakan final. Nilai oseanografi pada popup adalah nilai bulanan sel grid terdekat, bukan pengukuran lapangan. Perlu verifikasi lapangan, kondisi laut, zonasi taman nasional, dan persetujuan masyarakat.</span>
+        </div>
+        <div class="note-strip">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Lokasi peneluran sensitif tidak ditampilkan secara terbuka. Koordinatnya dapat diaproksimasi sesuai pengaturan administrator.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../data/oceanographic/CHL_peta.js"></script>
+<script src="../js/mapping.js"></script>
+</body>
+</html>

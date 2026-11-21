@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Laporan Saya — PenyuGuard</title>
+  <meta name="description" content="Pantau seluruh laporan penyu yang Anda kirimkan beserta status verifikasinya di PenyuGuard.">
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body data-require="user" data-active="lapor" class="pg-locked">
+<header id="pg-navbar"></header>
+
+<main>
+  <section class="page-hero page-hero-sm">
+    <div class="pg-container">
+      <span class="kicker">Kontribusi Anda</span>
+      <h1>Riwayat Laporan Saya</h1>
+      <p>Seluruh laporan yang Anda kirimkan beserta status verifikasi oleh operator konservasi.</p>
+    </div>
+  </section>
+
+  <section class="profile-section" style="padding-top:0;">
+    <div class="pg-container">
+      <div class="alert alert-info" style="margin-top:22px;">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Laporan yang belum berstatus <strong>Disetujui</strong> belum ditampilkan pada peta dan ringkasan publik.</span>
+      </div>
+
+      <!-- Filter status + pencarian lokasi -->
+      <div class="filter-bar" style="margin-top:20px;">
+        <div class="f-group f-grow" style="min-width:100%;">
+          <label>Filter Status</label>
+          <div class="chips-row" id="rep-chips"></div>
+        </div>
+        <div class="f-group f-grow">
+          <label for="rep-search">Cari Lokasi</label>
+          <div class="input-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="input" type="text" id="rep-search" placeholder="Contoh: Loh Buaya">
+          </div>
+        </div>
+      </div>
+
+      <!-- Daftar laporan -->
+      <div class="rep-list" id="rep-list" style="margin-top:20px;"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="pg-footer"></footer>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/my-reports.js"></script>
+</body>
+</html>

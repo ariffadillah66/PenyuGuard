@@ -1,0 +1,109 @@
+/* ============================================================
+   PenyuGuard — responsive.css
+   Penyesuaian responsivitas global (navbar, hero, footer, dsb.)
+   Breakpoint utama: 1100px (navbar → hamburger), 900px, 640px
+   ============================================================ */
+
+/* ---------- Navbar → hamburger (≤1200px) ---------- */
+@media (max-width: 1200px) {
+  .pg-nav-toggle { display: block; }
+  /* backdrop-filter membuat elemen position:fixed di dalamnya relatif ke navbar
+     (bukan viewport) — matikan agar drawer & overlay menutupi layar penuh */
+  .pg-nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255,255,255,.98); }
+  .pg-nav-menu {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 86vw);
+    background: #fff; flex-direction: column; align-items: stretch; gap: 4px;
+    padding: 84px 18px 26px; box-shadow: -12px 0 40px rgba(11,36,48,.18);
+    transform: translateX(105%); transition: transform .3s ease; overflow-y: auto; z-index: 1050;
+  }
+  .pg-nav-menu.open { transform: translateX(0); }
+  .pg-nav-link { display: block; padding: 13px 15px; font-size: 15px; border-radius: 11px; }
+  .pg-nav-link.is-cta { margin: 8px 0 0; text-align: center; }
+  .pg-nav-auth, .pg-nav-user { margin: 10px 0 0; }
+  .pg-userbtn { width: 100%; justify-content: flex-start; padding: 8px 14px 8px 8px; border-radius: 13px; }
+  .pg-dropdown {
+    position: static; width: 100%; box-shadow: none; border: none; background: var(--pg-aqua-soft);
+    opacity: 1; visibility: visible; transform: none; display: none; padding: 6px; margin-top: 6px; border-radius: 12px;
+  }
+  .pg-dropdown.show { display: block; }
+  .pg-nav::after {
+    content: ''; position: fixed; inset: 0; background: rgba(11,36,48,.45);
+    opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 1040;
+  }
+  .pg-nav.menu-open::after { opacity: 1; pointer-events: auto; }
+  body.nav-scroll-lock { overflow: hidden; }
+}
+
+/* ---------- Tablet (≤900px) ---------- */
+@media (max-width: 900px) {
+  .section { padding: 56px 0; }
+  .section-head h2 { font-size: 26px; }
+  .page-hero { padding: 44px 0 52px; }
+  .page-hero h1 { font-size: 28px; }
+  .pg-footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; padding: 46px 0 30px; }
+  .stat-value { font-size: 23px; }
+}
+
+/* ---------- Smartphone (≤640px) ---------- */
+@media (max-width: 640px) {
+  body { font-size: 14.8px; }
+  .pg-container { padding: 0 16px; }
+  .section { padding: 46px 0; }
+  .section-head h2 { font-size: 23px; }
+  .page-hero h1 { font-size: 24.5px; }
+  .page-hero p { font-size: 14.5px; }
+  .pg-footer-grid { grid-template-columns: 1fr; gap: 26px; }
+  .pg-footer-bottom { flex-direction: column; text-align: center; }
+  .btn { padding: 12px 20px; font-size: 14.5px; }
+  .btn-lg { padding: 14px 24px; font-size: 15.5px; }
+  .stat-card { padding: 16px; gap: 12px; }
+  .stat-icon { width: 46px; height: 46px; font-size: 18px; flex-basis: 46px; }
+  .stat-value { font-size: 21px; }
+  .chart-card { padding: 17px; }
+  .filter-bar { padding: 14px; }
+  .filter-bar .f-group { min-width: calc(50% - 6px); }
+  .pg-table { min-width: 540px; }
+  .pg-modal-body { padding: 18px; }
+  .pg-modal-head { padding: 16px 18px; }
+  .pg-toast-wrap { right: 12px; bottom: 12px; }
+  .calc-result .cr-value { font-size: 24px; }
+}
+
+/* ---------- Layar sangat kecil (≤400px) ---------- */
+@media (max-width: 400px) {
+  .filter-bar .f-group { min-width: 100%; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .pg-nav, .pg-demo-banner, .pg-footer, .pg-toast-wrap, .btn { display: none !important; }
+  body { background: #fff; }
+}
+
+/* ---------- Navbar v2: dropdown bertingkat untuk tablet & ponsel ---------- */
+@media (max-width: 1200px) {
+  .pg-nav-inner { justify-content: space-between; gap: 10px; }
+  .pg-nav-menu { flex: none; align-items: stretch; }
+  .pg-nav-group { width: 100%; }
+  .pg-nav-group-toggle { width: 100%; justify-content: flex-start; }
+  .pg-nav-group-icon { width: 18px; }
+  .pg-nav-chevron { margin-left: auto; }
+  .pg-nav-submenu {
+    display: none; position: static; min-width: 0; width: 100%; margin: 3px 0 7px;
+    padding: 5px 7px 5px 13px; border: 0; border-left: 2px solid var(--pg-aqua);
+    border-radius: 0 10px 10px 0; box-shadow: none; background: #F7FBFA;
+    opacity: 1; visibility: visible; transform: none;
+  }
+  .pg-nav-group.open .pg-nav-submenu { display: block; }
+  .pg-nav-sub-link { white-space: normal; padding: 10px 12px; }
+  .pg-nav-report { width: 100%; margin: 5px 0 0; }
+  .pg-nav-report .pg-nav-link { text-align: center; }
+  .pg-nav-register { margin: 4px 0 0; }
+  .pg-nav-register .btn { display: block; text-align: center; width: 100%; }
+}
+@media (max-width: 640px) {
+  .pg-nav-inner { min-height: 62px; }
+  .pg-brand { font-size: 19px; }
+  .pg-brand img { width: 35px; height: 35px; }
+  .pg-nav-menu { width: min(340px, 88vw); padding: 78px 16px 24px; }
+}

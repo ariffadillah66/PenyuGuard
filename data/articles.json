@@ -1,0 +1,102 @@
+[
+  {
+    "id": "art_01",
+    "title": "Mengenal Penyu Laut Indonesia",
+    "category": "Pengenalan Spesies",
+    "excerpt": "Indonesia menjadi habitat enam dari tujuh spesies penyu laut yang dikenal.",
+    "content": "<p>Penyu laut adalah reptil purba yang telah menghuni lautan selama lebih dari 100 juta tahun. Dari tujuh spesies penyu laut yang dikenal di dunia, enam di antaranya dapat dijumpai di perairan Indonesia, termasuk penyu hijau, penyu sisik, penyu lekang, penyu tempayan, penyu pipih, dan penyu belimbing.</p><p>Seluruh spesies penyu yang ada di Indonesia berstatus dilindungi oleh peraturan perundang-undangan. Artinya, menangkap, memperdagangkan, maupun mengganggu penyu dan telurnya dilarang secara hukum.</p><p>Di kawasan Taman Nasional Komodo, penyu hijau dan penyu sisik merupakan spesies yang paling sering teramati. Katalog spesies pada platform PenyuGuard menampilkan daftar kandidat yang keberadaannya di perairan Pulau Rinca dapat diperbarui seiring bertambahnya data pengamatan terverifikasi.</p>",
+    "image": "assets/images/hero-turtle.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_02",
+    "title": "Cara Membedakan Spesies Penyu",
+    "category": "Pengenalan Spesies",
+    "excerpt": "Amati bentuk kepala, susunan perisai karapas, dan ukuran tubuh untuk mengenali spesies penyu.",
+    "content": "<p>Mengidentifikasi spesies penyu di lapangan tidak selalu mudah, namun beberapa ciri utama dapat membantu:</p><ul><li><strong>Penyu Hijau (Chelonia mydas)</strong> — karapas halus dan cembung, kepala kecil membulat, dewasa bersifat herbivora sehingga sering terlihat merumput di padang lamun.</li><li><strong>Penyu Sisik (Eretmochelys imbricata)</strong> — perisai karapas saling tumpang-tindih dengan tepi bergerigi, paruh runcing menyerupai paruh elang, sering dijumpai di terumbu karang.</li><li><strong>Penyu Lekang (Lepidochelys olivacea)</strong> — ukuran kecil, karapas hampir bulat, jumlah perisai lateral relatif banyak.</li><li><strong>Penyu Tempayan (Caretta caretta)</strong> — kepala sangat besar dengan rahang kuat untuk memecahkan kerang.</li></ul><p>Saat melakukan pelaporan melalui PenyuGuard, Anda tidak wajib menentukan spesies. Pilih “Tidak diketahui” bila ragu — petugas akan membantu identifikasi dari foto dokumentasi.</p>",
+    "image": "assets/images/turtle-hawksbill.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_03",
+    "title": "Habitat dan Siklus Hidup Penyu",
+    "category": "Habitat",
+    "excerpt": "Siklus hidup penyu bermula di pantai dan berlanjut di laut hingga dewasa.",
+    "content": "<p>Siklus hidup penyu dimulai dari telur yang dierami pasir pantai. Suhu pasir menentukan jenis kelamin anak penyu — pasir yang lebih hangat cenderung menghasilkan betina. Setelah 45–70 hari, tukik (anak penyu) keluar dan segera bergegas menuju laut.</p><p>Tukik menghabiskan tahun-tahun awal hidupnya sebagai penyu muda pelagik yang berpindah mengikuti arus. Penyu remaja kemudian menetap di area foraging seperti padang lamun, terumbu karang, atau perairan pesisir hingga mencapai dewasa.</p><p>Penyu dewasa betina memiliki sifat natal homing — kembali ke pantai kelahirannya untuk bertelur, kadang dengan jarak ribuan kilometer. Karena itulah menjaga pantai peneluran dan perairan foraging sama pentingnya untuk keberlangsungan populasi.</p>",
+    "image": "assets/images/seagrass.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_04",
+    "title": "Status Konservasi dan Perlindungan Hukum",
+    "category": "Konservasi",
+    "excerpt": "Semua jenis penyu laut dilindungi di Indonesia; status konservasinya berbeda untuk tiap spesies.",
+    "content": "<p>Menurut Daftar Merah IUCN: penyu sisik berstatus <strong>Critically Endangered (CR)</strong>, penyu hijau <strong>Endangered (EN)</strong>, sedangkan penyu lekang dan penyu tempayan berstatus <strong>Vulnerable (VU)</strong>.</p><p>Seluruh spesies penyu laut terdaftar pada CITES Appendix I yang melarang perdagangan internasional. Di tingkat nasional, penyu termasuk satwa yang dilindungi berdasarkan Peraturan Menteri LHK No. P.106/MENLHK/SETJEN/KUM.1/12/2018 tentang jenis tumbuhan dan satwa yang dilindungi.</p><p>Bagi masyarakat pesisir, status ini berarti perjumpaan dengan penyu — baik di laut, di pantai, maupun tertangkap tidak sengaja — harus ditangani dengan cara yang aman bagi penyu dan dilaporkan kepada petugas berwenang.</p>",
+    "image": "assets/images/coral-reef.avif",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_05",
+    "title": "Ancaman terhadap Populasi Penyu",
+    "category": "Ancaman",
+    "excerpt": "Tangkapan sampingan, perdagangan, sampah plastik, dan perubahan habitat menjadi ancaman bagi penyu.",
+    "content": "<p>Populasi penyu laut di seluruh dunia menghadapi berbagai tekanan, antara lain:</p><ul><li><strong>Perdagangan ilegal</strong> telur, daging, dan cangkang penyu.</li><li><strong>Tangkapan sampingan (bycatch)</strong> pada alat tangkap seperti jaring insang dan rawai.</li><li><strong>Sampah plastik</strong> yang tertelan karena dianggap ubur-ubur, serta tali dan pukat hanyut yang melilit.</li><li><strong>Alih fungsi pantai</strong> — pembangunan pesisir dan pencahayaan yang mengganggu peneluran dan orientasi tukik.</li><li><strong>Perubahan iklim</strong> — kenaikan suhu pasir menggeser rasio jenis kelamin dan kenaikan muka air laut mengerosi pantai peneluran.</li></ul><p>Data interaksi yang dikumpulkan PenyuGuard membantu memetakan di mana tekanan tersebut paling sering terjadi sehingga mitigasi dapat diarahkan secara tepat.</p>",
+    "image": "assets/images/threats.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_06",
+    "title": "Peran Penyu dalam Ekosistem Laut",
+    "category": "Ekosistem",
+    "excerpt": "Penyu berperan dalam menjaga padang lamun dan mendukung siklus nutrien di pesisir.",
+    "content": "<p>Penyu hijau yang merumput secara terus-menerus menjaga padang lamun tetap pendek dan produktif — padang lamun yang sehat menjadi tempat bernaung ikan-ikan ekonomis penting dan menyimpan karbon biru dalam jumlah besar.</p><p>Penyu sisik mengendalikan populasi spons di terumbu. Tanpa pemangsa alami ini, spons dapat menutupi dan mengalahkan karang yang membangun terumbu.</p><p>Saat bertelur, penyu memindahkan nutrien laut ke pantai; sisa sarang dan tukik yang gagal menjadi sumber makanan bagi predator pantai. Penyu dengan demikian menghubungkan ekosistem laut dan darat dalam satu rantai kehidupan.</p>",
+    "image": "assets/images/seagrass.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_07",
+    "title": "Panduan: Ketika Anda Menemukan Penyu di Alam",
+    "category": "Panduan",
+    "excerpt": "Jaga jarak, jangan menyentuh atau mengejar, lalu laporkan perjumpaan kepada petugas.",
+    "content": "<p>Saat berjumpa penyu di laut atau pantai, lakukan hal berikut:</p><ul><li>Jaga jarak minimal 3–5 meter dan jangan mengejar atau menyentuh penyu.</li><li>Jangan menggunakan lampu atau flash kamera pada malam hari — cahaya mengganggu penyu bertelur dan tukik.</li><li>Jangan menunggangi, mengangkat, atau membalik posisi penyu.</li><li>Biarkan tukik berjalan sendiri ke laut; jangan dibantu dilempar ke air.</li><li>Jauhkan anjing dan burung dari sarang atau tukik.</li><li>Catat waktu, lokasi (koordinat GPS bila memungkinkan), kondisi penyu, dan perilaku yang teramati.</li><li>Laporkan perjumpaan melalui fitur <em>Laporkan Penyu</em> di PenyuGuard atau langsung kepada petugas taman nasional.</li></ul><p>Jika penyu terlihat terluka, terdampar, atau terperangkap, jangan menanganinya sendirian — hubungi petugas berwenang segera.</p>",
+    "image": "assets/images/hatchling.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_08",
+    "title": "Panduan Penanganan Awal Penyu Tertangkap Tidak Sengaja",
+    "category": "Panduan",
+    "excerpt": "Jika penyu tertangkap alat tangkap atau terdampar, amankan seperlunya dan segera hubungi petugas.",
+    "content": "<p>Bila penyu tertangkap tidak sengaja pada alat tangkap:</p><ul><li>Bawa penyu ke atas perahu dengan hati-hati — pegang pada sisi depan karapas, jangan pada ekor atau sirip.</li><li>Letakkan penyu di tempat teduh dan rata; <strong>jangan membalik penyu terlentang</strong>.</li><li>Lepaskan kait atau jaring dengan perlahan; bila tersangkut di mulut atau tertelan, jangan dipaksa — serahkan pada petugas.</li><li>Basahi kulit penyu secara berkala dengan air laut (hindari mata dan lubang hidung). Jangan menuangkan air ke mulut.</li><li>Bila penyu lemas, letakkan bagian belakang karapas sedikit lebih tinggi agar saluran udarnya bekerja normal.</li><li>Sebelum dilepas, pastikan penyu aktif dan perahu berada jauh dari jaring; lepaskan menghadap ke laut lepas.</li></ul><p>Catat jenis alat tangkap, kondisi penyu, dan lokasi kejadian, kemudian laporkan melalui PenyuGuard. Dukungan teknis penanganan dapat dikoordinasikan dengan petugas Balai Taman Nasional Komodo atau BKSDA setempat.</p>",
+    "image": "assets/images/coastal-community.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_09",
+    "title": "Cara Melaporkan Perjumpaan Penyu",
+    "category": "Panduan",
+    "excerpt": "Catat lokasi dan waktu kejadian, unggah foto bila ada, lalu pantau status laporan.",
+    "content": "<p>Setiap perjumpaan penyu berharga bagi pemetaan persebaran. Melalui halaman <strong>Laporkan Penyu</strong>, Anda dapat mengirim laporan dalam beberapa langkah:</p><ol><li>Login atau buat akun terlebih dahulu (gratis).</li><li>Isi tanggal-waktu kejadian, lokasi, dan koordinat bila diketahui.</li><li>Pilih jenis kejadian: perjumpaan, bycatch, terdampar, terluka, atau lainnya.</li><li>Tentukan spesies bila yakin — pilih “Tidak diketahui” bila ragu.</li><li>Lampirkan foto dokumentasi dari jarak aman.</li><li>Kirim laporan dan simpan nomor laporan yang muncul.</li></ol><p>Laporan Anda akan berstatus <em>Menunggu Verifikasi</em> hingga diperiksa petugas. Setelah disetujui, data akan memperkaya peta persebaran dan dashboard publik. Status laporan dapat dipantau kapan saja di halaman Riwayat Laporan.</p>",
+    "image": "assets/images/komodo-water.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  },
+  {
+    "id": "art_10",
+    "title": "Interaksi Penyu dengan Nelayan dan Budidaya Rumput Laut",
+    "category": "Interaksi",
+    "excerpt": "Penyu, nelayan, dan pembudidaya berbagi ruang perairan. Catatan lapangan membantu memahami interaksi ini.",
+    "content": "<p>Perairan di sekitar Pulau Rinca memiliki fungsi ganda: habitat penyu dan ruang hidup ekonomi masyarakat pesisir. Nelayan bekerja pada perairan yang juga dilalui penyu, sementara kebun rumput laut berdekatan dengan padang lamun.</p><p>Interaksi yang paling umum adalah tangkapan sampingan (bycatch) pada jaring insang dan rawai, serta kemungkinan penyu mendatangi kebun rumput laut. Penyebab penurunan produksi budidaya sangat beragam — cuaca, kualitas air, hama, dan penyakit rumput laut — sehingga kalkulator kerugian pada halaman Ekonomi hanya menghitung selisih produksi dan tidak serta-merta menyalahkan penyu.</p><p>Pendekatan mitigasi yang dianjurkan: pelaporan setiap interaksi, penggunaan perangkat penangkal penyu (TED) pada trawl di wilayah yang relevan, pengaturan waktu tarik jaring, dan koordinasi rutin antara kelompok budidaya dengan pengelola taman nasional.</p>",
+    "image": "assets/images/seaweed-farm.jpg",
+    "published": true,
+    "updated_at": "2026-10-01T08:00:00+08:00"
+  }
+]

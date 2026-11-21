@@ -1,0 +1,40 @@
+[
+  {
+    "id": "sp_green",
+    "name": "Penyu Hijau",
+    "scientific": "Chelonia mydas",
+    "iucn": "EN",
+    "image": "assets/images/hero-turtle.jpg",
+    "confirmed_local": true,
+    "presence_note": "Tercatat di perairan Taman Nasional Komodo, termasuk area padang lamun dan terumbu dangkal.",
+    "ccl_range": "80–120 cm (dewasa)",
+    "weight_range": "68–190 kg",
+    "characteristics": [
+      "Karapas halus, cembung, berwarna cokelat kekuningan hingga kehijauan",
+      "Kepala kecil dan membulat dengan sepasang sisik prefrontal",
+      "Dewasa bersifat herbivora (padang lamun dan alga)",
+      "Ekor pendek pada betina, lebih panjang pada jantan dewasa"
+    ],
+    "habitat": "Perairan dangkal padang lamun dan terumbu karang; pantai berpasir untuk peneluran.",
+    "description": "Penyu hijau adalah penyu herbivora terbesar di perairan Indonesia. Aktivitas merumputnya berperan menjaga kesehatan padang lamun. Di sekitar Taman Nasional Komodo, penyu ini sering teramati pada padang lamun dangkal dan lereng terumbu."
+  },
+  {
+    "id": "sp_hawksbill",
+    "name": "Penyu Sisik",
+    "scientific": "Eretmochelys imbricata",
+    "iucn": "CR",
+    "image": "assets/images/turtle-hawksbill.jpg",
+    "confirmed_local": true,
+    "presence_note": "Tercatat di perairan Taman Nasional Komodo, terutama di sekitar terumbu karang.",
+    "ccl_range": "70–95 cm (dewasa)",
+    "weight_range": "40–70 kg",
+    "characteristics": [
+      "Perisai karapas saling tumpang-tindih (imbricate)",
+      "Paruh tajam menyerupai paruh elang",
+      "Pola warna cokelat-amber dengan motif mozaik",
+      "Dewasa memakan spons (porifera) di terumbu"
+    ],
+    "habitat": "Terumbu karang tropis dengan banyak celah dan spons; pantai berpohon untuk peneluran.",
+    "description": "Penyu sisik dikenal dari perisai karapasnya yang tumpang-tindih dan paruh runcing untuk menjangkau spons di celah terumbu. Status konservasinya Kritis (Critically Endangered) sehingga setiap perjumpaan penting untuk didokumentasikan."
+  }
+]

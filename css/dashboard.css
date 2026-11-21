@@ -1,0 +1,83 @@
+/* ============================================================
+   PenyuGuard — dashboard.css
+   Layout halaman dashboard publik & halaman analitik
+   ============================================================ */
+
+.dash-toolbar { display: flex; flex-direction: column; gap: 16px; margin-bottom: 26px; }
+.dash-toolbar-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.dash-toolbar-top .updated { display: inline-flex; align-items: center; gap: 8px; font-size: 12.8px; color: var(--pg-muted); }
+.dash-toolbar-top .updated i { color: var(--pg-teal); }
+
+.kpi-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 26px; }
+
+.chart-duo { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 20px; }
+.chart-duo-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.chart-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.chart-stack > .chart-card { margin-bottom: 20px; }
+
+@media (max-width: 1020px) {
+  .chart-duo, .chart-duo-eq, .chart-trio { grid-template-columns: 1fr; }
+}
+
+/* Panel sumber data */
+.data-source-card { border-left: 4px solid var(--pg-teal); }
+.data-source-card h4 { font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.data-source-card h4 i { color: var(--pg-teal); }
+.data-source-card ul { list-style: none; }
+.data-source-card ul li { display: flex; gap: 9px; font-size: 13.3px; color: var(--pg-muted); margin-bottom: 8px; line-height: 1.55; }
+.data-source-card ul li i { color: var(--pg-ocean); margin-top: 3px; font-size: 11px; }
+
+/* Ringkasan mini pada kartu statistik besar */
+.mini-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+.mini-stat { background: var(--pg-aqua-soft); border-radius: 12px; padding: 15px 17px; }
+.mini-stat .ms-value { font-family: var(--pg-font-head); font-size: 22px; font-weight: 800; color: var(--pg-navy); }
+.mini-stat .ms-label { font-size: 12.3px; color: var(--pg-muted); font-weight: 500; }
+
+/* Tabel ringkas dalam kartu */
+.table-card { padding: 0; overflow: hidden; }
+.table-card .pg-table { min-width: 560px; }
+.table-card .table-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--pg-border); flex-wrap: wrap; }
+.table-card .table-head h3 { font-size: 16px; }
+.table-card .table-foot { padding: 14px 22px; border-top: 1px solid var(--pg-border); display: flex; justify-content: center; }
+
+/* Kategori warna kondisi */
+.cond-Sehat { color: #1E7A6E; font-weight: 600; }
+.cond-Terluka { color: #B06E12; font-weight: 600; }
+.cond-Terdampar { color: #B32D38; font-weight: 600; }
+.cond-Meninggal { color: #6B7A83; font-weight: 600; }
+
+/* Kartu lokasi budidaya */
+.aqua-card { display: flex; flex-direction: column; gap: 10px; }
+.aqua-card .aqua-head { display: flex; gap: 12px; align-items: center; }
+.aqua-card .aqua-head i { width: 44px; height: 44px; border-radius: 12px; background: var(--pg-success-soft); color: var(--pg-teal-deep); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.aqua-card h4 { font-size: 15px; line-height: 1.35; }
+.aqua-card h4 small { display: block; font-family: var(--pg-font-body); font-size: 12.3px; color: var(--pg-muted); font-weight: 500; }
+.aqua-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; font-size: 12.8px; }
+.aqua-meta span { color: var(--pg-muted); display: block; font-size: 11.3px; text-transform: uppercase; letter-spacing: .4px; }
+.aqua-meta strong { color: var(--pg-navy); font-size: 13.3px; }
+
+/* Kalkulator ekonomi */
+.calc-card { background: var(--pg-grad-navy); color: #fff; border: none; overflow: hidden; position: relative; }
+.calc-card::after { content: ''; position: absolute; right: -70px; bottom: -70px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(217,255,71,.32), transparent 70%); }
+.calc-card .calc-inner { position: relative; z-index: 1; }
+.calc-card h3 { color: #fff; display: flex; align-items: center; gap: 10px; }
+.calc-card .field label { color: rgba(255,255,255,.85); }
+.calc-card .input { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.22); color: #fff; }
+.calc-card .input::placeholder { color: rgba(255,255,255,.4); }
+.calc-card .input:focus { border-color: var(--pg-ocean); box-shadow: 0 0 0 4px rgba(0,0,255,.16); }
+.calc-result {
+  margin-top: 18px; background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.2);
+  border-radius: 14px; padding: 18px 20px; text-align: center;
+}
+.calc-result .cr-label { font-size: 12.5px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.65); font-weight: 600; }
+.calc-result .cr-value { font-family: var(--pg-font-head); font-size: 30px; font-weight: 800; color: #7BE0C8; margin: 4px 0; }
+.calc-result .cr-note { font-size: 11.8px; color: rgba(255,255,255,.55); }
+
+/* Keterangan korelasi */
+.corr-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pg-info-soft); color: var(--pg-ocean-deep); font-weight: 700; padding: 7px 14px; border-radius: 999px; font-size: 13.5px; }
+
+/* Halaman populasi — kartu insight */
+.insight-card { display: flex; gap: 14px; align-items: flex-start; }
+.insight-card i { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: var(--pg-aqua); color: var(--pg-teal-deep); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.insight-card h4 { font-size: 14.8px; margin-bottom: 3px; }
+.insight-card p { font-size: 13.2px; color: var(--pg-muted); line-height: 1.6; }

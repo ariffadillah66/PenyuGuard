@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Oseanografi — Admin PenyuGuard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/penyuguard.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/ocean-theme.css">
+</head>
+<body class="adm-body" data-auth-area="admin" data-require="staff" data-active="oceanographic">
+<div class="adm-layout" id="adm-layout">
+  <aside class="adm-sidebar" id="pg-sidebar"></aside>
+  <div class="adm-drawer-overlay" id="adm-overlay"></div>
+  <div class="adm-main">
+    <header class="adm-topbar" id="pg-topbar"></header>
+    <main class="adm-content">
+      <div class="adm-page-head">
+        <div>
+          <h1>Manajemen Data Oseanografi</h1>
+          <p>Impor dan kelola data SST, klorofil-a, dan salinitas untuk analisis oseanografi Pulau Rinca.</p>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-outline" id="btn-import-csv"><i class="fa-solid fa-temperature-half"></i> Impor SST</button>
+          <input type="file" id="sst-csv-file" accept=".csv,text/csv" style="display:none">
+          <button class="btn btn-outline" id="btn-import-chl"><i class="fa-solid fa-leaf"></i> Impor Klorofil-a</button>
+          <input type="file" id="chl-csv-file" accept=".csv,text/csv" style="display:none">
+          <button class="btn btn-outline" id="btn-import-salinity"><i class="fa-solid fa-water"></i> Impor Salinitas</button>
+          <input type="file" id="salinity-csv-file" accept=".csv,text/csv" style="display:none">
+          <button class="btn btn-primary" id="btn-sst-add"><i class="fa-solid fa-plus"></i> Tambah Manual</button>
+        </div>
+      </div>
+
+      <div class="alert alert-info mb-16">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Format CSV menerima kolom <code>bulan,tahun,bulan_angka,sst_mean_c,sst_min_c,sst_max_c</code> atau <code>year,month,sst_mean_c,sst_min_c,sst_max_c</code> — satu baris per bulan. Nilai minimum/maksimum SST boleh kosong; nilai rata-rata wajib ada.
+        Periode yang sudah ada akan diperbarui; baris tanpa nilai utama atau format tanggal yang valid akan dilewati. Untuk Supabase, jalankan SQL tambahan database/oceanographic_tables.sql terlebih dahulu.</span>
+      </div>
+
+      <div class="grid grid-3 mb-20" id="ocean-data-import-status">
+        <div class="stat-card"><strong>SST</strong><span id="count-sst">Memuat…</span><small>periode bulanan</small></div>
+        <div class="stat-card"><strong>Klorofil-a</strong><span id="count-chl">Memuat…</span><small>periode bulanan</small></div>
+        <div class="stat-card"><strong>Salinitas</strong><span id="count-salinity">Memuat…</span><small>periode bulanan</small></div>
+      </div>
+
+      <div class="chart-card mb-20">
+        <div class="flex-between mb-12">
+          <div>
+            <h3>Grafik SST Bulanan</h3>
+            <p class="chart-sub" id="sst-chart-sub">Memuat…</p>
+          </div>
+          <div class="f-group" style="min-width:130px">
+            <label style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--pg-muted)">Tahun</label>
+            <select class="select" id="sst-year"></select>
+          </div>
+        </div>
+        <div class="chart-box" style="--h:300px"><canvas id="chart-sst-admin"></canvas></div>
+      </div>
+
+      <div class="alert alert-info mb-16" id="ocean-import-feedback" aria-live="polite">Impor akan mengikuti status penyimpanan: Supabase Aktif atau Penyimpanan Lokal.</div>
+      <div id="tbl-sst"></div>
+    </main>
+    <footer class="adm-footer" id="adm-footer"></footer>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../config/runtime-config.js"></script>
+<script src="../config/supabase.js"></script>
+<script src="../js/data-fallback.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/admin/admin.js"></script>
+<script src="../js/admin/data-management.js"></script>
+</body>
+</html>

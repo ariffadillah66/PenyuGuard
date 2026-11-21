@@ -1,0 +1,533 @@
+[
+  {
+    "year": 2022,
+    "month": 1,
+    "period": "2022-01",
+    "sst_mean_c": 28.837,
+    "sst_min_c": 28.74,
+    "sst_max_c": 28.97,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 2,
+    "period": "2022-02",
+    "sst_mean_c": 28.957,
+    "sst_min_c": 28.86,
+    "sst_max_c": 29.12,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 3,
+    "period": "2022-03",
+    "sst_mean_c": 29.143,
+    "sst_min_c": 29.07,
+    "sst_max_c": 29.27,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 4,
+    "period": "2022-04",
+    "sst_mean_c": 29.478,
+    "sst_min_c": 29.31,
+    "sst_max_c": 29.75,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 5,
+    "period": "2022-05",
+    "sst_mean_c": 28.874,
+    "sst_min_c": 28.57,
+    "sst_max_c": 29.29,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 6,
+    "period": "2022-06",
+    "sst_mean_c": 28.499,
+    "sst_min_c": 28.15,
+    "sst_max_c": 29.01,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 7,
+    "period": "2022-07",
+    "sst_mean_c": 27.388,
+    "sst_min_c": 26.72,
+    "sst_max_c": 28.22,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 8,
+    "period": "2022-08",
+    "sst_mean_c": 27.025,
+    "sst_min_c": 26.45,
+    "sst_max_c": 27.82,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 9,
+    "period": "2022-09",
+    "sst_mean_c": 27.711,
+    "sst_min_c": 27.33,
+    "sst_max_c": 28.18,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 10,
+    "period": "2022-10",
+    "sst_mean_c": 28.788,
+    "sst_min_c": 28.6,
+    "sst_max_c": 29.14,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 11,
+    "period": "2022-11",
+    "sst_mean_c": 29.571,
+    "sst_min_c": 29.55,
+    "sst_max_c": 29.61,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2022,
+    "month": 12,
+    "period": "2022-12",
+    "sst_mean_c": 29.532,
+    "sst_min_c": 29.5,
+    "sst_max_c": 29.58,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 1,
+    "period": "2023-01",
+    "sst_mean_c": 28.614,
+    "sst_min_c": 28.46,
+    "sst_max_c": 28.76,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 2,
+    "period": "2023-02",
+    "sst_mean_c": 28.695,
+    "sst_min_c": 28.64,
+    "sst_max_c": 28.78,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 3,
+    "period": "2023-03",
+    "sst_mean_c": 29.118,
+    "sst_min_c": 28.85,
+    "sst_max_c": 29.39,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 4,
+    "period": "2023-04",
+    "sst_mean_c": 29.024,
+    "sst_min_c": 28.95,
+    "sst_max_c": 29.14,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 5,
+    "period": "2023-05",
+    "sst_mean_c": 27.932,
+    "sst_min_c": 27.4,
+    "sst_max_c": 28.62,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 6,
+    "period": "2023-06",
+    "sst_mean_c": 27.225,
+    "sst_min_c": 26.61,
+    "sst_max_c": 28.01,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 7,
+    "period": "2023-07",
+    "sst_mean_c": 26.876,
+    "sst_min_c": 26.23,
+    "sst_max_c": 27.7,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 8,
+    "period": "2023-08",
+    "sst_mean_c": 26.708,
+    "sst_min_c": 25.95,
+    "sst_max_c": 27.68,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 9,
+    "period": "2023-09",
+    "sst_mean_c": 26.395,
+    "sst_min_c": 25.95,
+    "sst_max_c": 27.1,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 10,
+    "period": "2023-10",
+    "sst_mean_c": 27.737,
+    "sst_min_c": 27.48,
+    "sst_max_c": 28.24,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 11,
+    "period": "2023-11",
+    "sst_mean_c": 29.178,
+    "sst_min_c": 28.96,
+    "sst_max_c": 29.52,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "period": "2023-12",
+    "sst_mean_c": 29.165,
+    "sst_min_c": 29.11,
+    "sst_max_c": 29.28,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 1,
+    "period": "2024-01",
+    "sst_mean_c": 29.585,
+    "sst_min_c": 29.5,
+    "sst_max_c": 29.7,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 2,
+    "period": "2024-02",
+    "sst_mean_c": 29.279,
+    "sst_min_c": 29.04,
+    "sst_max_c": 29.59,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 3,
+    "period": "2024-03",
+    "sst_mean_c": 29.767,
+    "sst_min_c": 29.51,
+    "sst_max_c": 29.96,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 4,
+    "period": "2024-04",
+    "sst_mean_c": 29.047,
+    "sst_min_c": 28.9,
+    "sst_max_c": 29.31,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 5,
+    "period": "2024-05",
+    "sst_mean_c": 28.145,
+    "sst_min_c": 27.42,
+    "sst_max_c": 29.15,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "period": "2024-06",
+    "sst_mean_c": 27.585,
+    "sst_min_c": 26.86,
+    "sst_max_c": 28.55,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 7,
+    "period": "2024-07",
+    "sst_mean_c": 26.916,
+    "sst_min_c": 26.26,
+    "sst_max_c": 27.72,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 8,
+    "period": "2024-08",
+    "sst_mean_c": 26.891,
+    "sst_min_c": 26.3,
+    "sst_max_c": 27.83,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 9,
+    "period": "2024-09",
+    "sst_mean_c": 27.565,
+    "sst_min_c": 27.13,
+    "sst_max_c": 28.3,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 10,
+    "period": "2024-10",
+    "sst_mean_c": 28.252,
+    "sst_min_c": 27.97,
+    "sst_max_c": 28.81,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 11,
+    "period": "2024-11",
+    "sst_mean_c": 29.455,
+    "sst_min_c": 29.3,
+    "sst_max_c": 29.64,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2024,
+    "month": 12,
+    "period": "2024-12",
+    "sst_mean_c": 29.512,
+    "sst_min_c": 29.4,
+    "sst_max_c": 29.61,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 1,
+    "period": "2025-01",
+    "sst_mean_c": 29.076,
+    "sst_min_c": 29.01,
+    "sst_max_c": 29.15,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 2,
+    "period": "2025-02",
+    "sst_mean_c": 28.705,
+    "sst_min_c": 28.53,
+    "sst_max_c": 28.92,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 3,
+    "period": "2025-03",
+    "sst_mean_c": 29.351,
+    "sst_min_c": 29.25,
+    "sst_max_c": 29.56,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 4,
+    "period": "2025-04",
+    "sst_mean_c": 29.398,
+    "sst_min_c": 29.32,
+    "sst_max_c": 29.54,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 5,
+    "period": "2025-05",
+    "sst_mean_c": 28.946,
+    "sst_min_c": 28.64,
+    "sst_max_c": 29.31,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 6,
+    "period": "2025-06",
+    "sst_mean_c": 27.977,
+    "sst_min_c": 27.54,
+    "sst_max_c": 28.63,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 7,
+    "period": "2025-07",
+    "sst_mean_c": 27.265,
+    "sst_min_c": 26.66,
+    "sst_max_c": 28.09,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 8,
+    "period": "2025-08",
+    "sst_mean_c": 27.0,
+    "sst_min_c": 26.45,
+    "sst_max_c": 27.79,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 9,
+    "period": "2025-09",
+    "sst_mean_c": 27.565,
+    "sst_min_c": 27.24,
+    "sst_max_c": 28.07,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 10,
+    "period": "2025-10",
+    "sst_mean_c": 28.613,
+    "sst_min_c": 28.23,
+    "sst_max_c": 29.17,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 11,
+    "period": "2025-11",
+    "sst_mean_c": 29.602,
+    "sst_min_c": 29.54,
+    "sst_max_c": 29.7,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2025,
+    "month": 12,
+    "period": "2025-12",
+    "sst_mean_c": 29.38,
+    "sst_min_c": 29.29,
+    "sst_max_c": 29.47,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 1,
+    "period": "2026-01",
+    "sst_mean_c": 28.615,
+    "sst_min_c": 28.47,
+    "sst_max_c": 28.77,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 2,
+    "period": "2026-02",
+    "sst_mean_c": 28.481,
+    "sst_min_c": 28.32,
+    "sst_max_c": 28.63,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 3,
+    "period": "2026-03",
+    "sst_mean_c": 28.261,
+    "sst_min_c": 28.17,
+    "sst_max_c": 28.52,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 4,
+    "period": "2026-04",
+    "sst_mean_c": 28.938,
+    "sst_min_c": 28.66,
+    "sst_max_c": 29.38,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 5,
+    "period": "2026-05",
+    "sst_mean_c": 28.212,
+    "sst_min_c": 27.72,
+    "sst_max_c": 28.99,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 6,
+    "period": "2026-06",
+    "sst_mean_c": 27.557,
+    "sst_min_c": 26.97,
+    "sst_max_c": 28.32,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 7,
+    "period": "2026-07",
+    "sst_mean_c": 26.91,
+    "sst_min_c": 26.32,
+    "sst_max_c": 27.81,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 8,
+    "period": "2026-08",
+    "sst_mean_c": 26.276,
+    "sst_min_c": 25.68,
+    "sst_max_c": 27.07,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 9,
+    "period": "2026-09",
+    "sst_mean_c": 26.528,
+    "sst_min_c": 26.07,
+    "sst_max_c": 27.17,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 10,
+    "period": "2026-10",
+    "sst_mean_c": 27.681,
+    "sst_min_c": 27.42,
+    "sst_max_c": 28.04,
+    "valid_cell_count": 559
+  },
+  {
+    "year": 2026,
+    "month": 11,
+    "period": "2026-11",
+    "sst_mean_c": 29.121,
+    "sst_min_c": 28.93,
+    "sst_max_c": 29.37,
+    "valid_cell_count": 559
+  }
+]
